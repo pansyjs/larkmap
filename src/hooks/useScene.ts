@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import {} from '@antv/l7-scene'
 import { LarkMapContext } from '@/components/LarkMap';
 
 export const useScene = () => {

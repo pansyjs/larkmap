@@ -33,10 +33,11 @@
   },
   "devDependencies": {
     "@antv/l7": "^2.9.16",
+    "@pansy/dumi-theme-pansy": "1.0.1",
+    "@turf/helpers": "^6.5.0",
     "@types/geojson": "^7946.0.10",
     "@types/react": "^17",
     "@types/react-dom": "^17",
-    "@pansy/dumi-theme-pansy": "1.0.1",
     "@umijs/babel-preset-umi": "3.5.30",
     "antd": "^4.21.7",
     "dumi": "^1.1.46",

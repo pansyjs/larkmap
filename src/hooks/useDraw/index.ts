@@ -1,3 +1,5 @@
+/// <reference types="@turf/helpers" />
+
 import { DrawEvent } from '@antv/l7-draw';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useScene } from '@/hooks/useScene';
