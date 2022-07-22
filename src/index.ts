@@ -9,3 +9,6 @@ export { ScaleProps } from './components/Scale/types';
 
 export { Marker } from './components/Marker';
 export { MarkerProps } from './components/Marker/types';
+
+export { Popup } from './components/Popup';
+export { PopupProps } from './components/Popup/types';
