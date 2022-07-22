@@ -22,7 +22,7 @@ specifiers:
   lint-staged: ^13.0.3
   react: ^17.0.2
   react-dom: ^17.0.2
-  redbud: 1.0.0-rc.3
+  redbud: 1.0.0-rc.4
   typescript: ^4.7.4
 
 dependencies:
@@ -49,7 +49,7 @@ devDependencies:
   lint-staged: 13.0.3
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
-  redbud: 1.0.0-rc.3
+  redbud: 1.0.0-rc.4
   typescript: 4.7.4
 
 packages:
@@ -5445,6 +5445,13 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /file-system-cache/2.0.0:
+    resolution: {integrity: sha512-QlYut2ZtxRgdW/dboSmiKZWM8FsnpLaLI549hN/RWgwn3FawSil7Jc2n7nFHheclvYxa4LJqwEOvNUYv9VsCXg==}
+    dependencies:
+      fs-extra: 10.1.0
+      ramda: 0.28.0
+    dev: true
+
   /filesize/3.6.1:
     resolution: {integrity: sha512-7KjR1vv6qnicaPMi1iiTcI85CyYwRO/PSFCu6SvqL8jN2Wjt/NIYQTFtFs7fSDCYOstUkEWIQGFUg5YZQfjlcg==}
     engines: {node: '>= 0.4.0'}
@@ -9121,6 +9128,10 @@ packages:
   /quickselect/2.0.0:
     resolution: {integrity: sha512-RKJ22hX8mHe3Y6wH/N3wCM6BWtjaxIyyUIkpHOvfFnxdI4yD4tBXEBKSbriGujF6jnSVkJrffuo6vxACiSSxIw==}
 
+  /ramda/0.28.0:
+    resolution: {integrity: sha512-9QnLuG/kPVgWvMQ4aODhsBUFKOUmnbUnsSXACv+NCQZcHbeb+v8Lodp8OVxtRULN1/xOyYLLaL6npE6dMq5QTA==}
+    dev: true
+
   /randombytes/2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
     dependencies:
@@ -9889,8 +9900,8 @@ packages:
     engines: {node: '>= 12.13.0'}
     dev: true
 
-  /redbud/1.0.0-rc.3:
-    resolution: {integrity: sha512-rahgAxSIt+mkD4LSlNgyTppZ8ocdCmMdVZKxNr/xDJMeyTss478xo/IFKEQhYANqL8KdvkXZE8a9McmOHff7YA==}
+  /redbud/1.0.0-rc.4:
+    resolution: {integrity: sha512-kRsrA4OaOpKjSJLlz+tQp0zIBfmwd6S80aGUuHYYIadGysICATLFDpVZ5G68BEcXBznxrfkyf6c3tjCTrg/ucA==}
     hasBin: true
     dependencies:
       '@microsoft/api-extractor': 7.25.1
@@ -9903,6 +9914,7 @@ packages:
       babel-plugin-module-resolver: 4.1.0
       babel-plugin-react-require: 3.1.3
       babel-plugin-transform-define: 2.0.1
+      file-system-cache: 2.0.0
       loader-runner: 4.2.0
       minimatch: 3.1.2
       tsconfig-paths: 4.0.0
