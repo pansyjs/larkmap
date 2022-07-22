@@ -1,0 +1,44 @@
+{
+  "name": "@pansy/lark-map",
+  "version": "1.0.0",
+  "description": "A React toolkit for geospatial visualization based on L7",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "dumi dev",
+    "dev": "redbud dev",
+    "build": "redbud build",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "@antv/l7": "^2.8.35",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "dependencies": {
+    "@antv/l7-composite-layers": "0.1.0-alpha.2",
+    "@antv/l7-maps": "^2.9.16",
+    "@pansy/classnames": "^1.0.1",
+    "@pansy/react-hooks": "^0.9.13"
+  },
+  "devDependencies": {
+    "@antv/l7": "^2.9.16",
+    "@types/react": "^17",
+    "@types/react-dom": "^17",
+    "dumi": "^1.1.46",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.7.4"
+  },
+  "authors": [
+    "wangxingkang <wang_xingkang@qq.com> (https://github.com/wangxingkang)"
+  ]
+}
