@@ -22,8 +22,10 @@
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {
+    "@antv/l7-component": "^2.9.16",
     "@antv/l7-composite-layers": "0.1.0-alpha.2",
     "@antv/l7-maps": "^2.9.16",
+    "@antv/l7-scene": "^2.9.16",
     "@pansy/classnames": "^1.0.1",
     "@pansy/react-hooks": "^0.9.13"
   },

@@ -16,7 +16,10 @@ LarkMap 是地图容器组件，相关地图组件与 Hooks 需放到容器组�
 
 ## 代码演示
 
-
 ### 通过配置项生成
 
 <code src="./demos/default.tsx"></code>
+
+### 通过实例生成
+
+<code src="./demos/mapbox-instance.tsx"></code>

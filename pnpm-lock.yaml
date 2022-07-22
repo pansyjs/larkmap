@@ -2,8 +2,10 @@ lockfileVersion: 5.4
 
 specifiers:
   '@antv/l7': ^2.9.16
+  '@antv/l7-component': ^2.9.16
   '@antv/l7-composite-layers': 0.1.0-alpha.2
   '@antv/l7-maps': ^2.9.16
+  '@antv/l7-scene': ^2.9.16
   '@pansy/classnames': ^1.0.1
   '@pansy/react-hooks': ^0.9.13
   '@types/react': ^17
@@ -16,8 +18,10 @@ specifiers:
   typescript: ^4.7.4
 
 dependencies:
+  '@antv/l7-component': 2.9.16
   '@antv/l7-composite-layers': 0.1.0-alpha.2_@antv+l7@2.9.16
   '@antv/l7-maps': 2.9.16
+  '@antv/l7-scene': 2.9.16
   '@pansy/classnames': 1.0.1
   '@pansy/react-hooks': 0.9.13_react@17.0.2
 

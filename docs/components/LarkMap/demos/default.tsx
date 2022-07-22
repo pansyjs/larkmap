@@ -12,7 +12,7 @@ const config: LarkMapProps = {
 };
 
 export default () => (
-  <LarkMap {...config} style={{ height: '400px' }}>
+  <LarkMap {...config} style={{ height: 400 }}>
     <h2 style={{ position: 'absolute', left: '10px' }}>LarkMap</h2>
   </LarkMap>
 );
