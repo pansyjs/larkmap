@@ -12,3 +12,6 @@ export { MarkerProps } from './components/Marker/types';
 
 export { Popup } from './components/Popup';
 export { PopupProps } from './components/Popup/types';
+
+export { useScene } from './hooks/useScene';
+export { useDraw } from './hooks/useDraw';

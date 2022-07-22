@@ -6,3 +6,13 @@ export type CommonProps = {
   /** 行内样式 */
   style?: CSSProperties;
 };
+
+export type {
+  DrawData,
+  DrawType,
+  PartialDrawCircleOptions,
+  PartialDrawLineOptions,
+  PartialDrawPointOptions,
+  PartialDrawPolygonOptions,
+  PartialDrawRectOptions,
+} from './draw';
