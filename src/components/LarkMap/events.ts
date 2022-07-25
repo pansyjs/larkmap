@@ -1,8 +1,4 @@
-import reduce from 'lodash/reduce';
-import isEqual from 'lodash/isEqual';
-import isFunction from 'lodash/isFunction';
-import type { Scene } from '@antv/l7';
-import type { Events, EventMapping, Listeners, } from './types';
+import type { EventMapping, } from './types';
 
 export const events: EventMapping = {
   onResize: 'resize',
@@ -34,74 +30,4 @@ export const events: EventMapping = {
   onDragging: 'dragging',
   /** 停止拖拽地图时触发。如地图有拖拽缓动效果，则在拽停止，缓动开始前触发 */
   onDragEnd: 'dragend',
-}
-
-export function getPropsEvents(props: Record<string, any> = {}) {
-  return reduce(props, (result, value, key) => {
-    if (isFunction(value) && /^on[A-Z]/.test(key) ) {
-      result[key] = value;
-    }
-
-    return result;
-  }, {})
-}
-
-export const listenEvents = (
-  partialEvents: EventMapping,
-  props: Partial<Events>,
-  scene: Scene,
-) =>
-  Object.keys(partialEvents).reduce(
-    (listeners, event) => {
-      const propEvent = props[event];
-
-      if (propEvent) {
-        const listener = (e: React.SyntheticEvent<any>) => {
-          propEvent(e, scene);
-        };
-
-        scene.on(partialEvents[event], listener);
-
-        listeners[event] = listener;
-      }
-
-      return listeners;
-    },
-    {}
-  );
-
-export const updateEvents = (
-  listeners: Partial<Listeners>,
-  currentProps: Partial<Events>,
-  scene: Scene
-) => {
-  const toListenOff = Object.keys(events).filter(
-    eventKey => (listeners[eventKey] && typeof currentProps[eventKey] !== 'function') || !isEqual(listeners[eventKey], currentProps[eventKey])
-  );
-
-  toListenOff.forEach(key => {
-    scene.off(events[key], listeners[key]);
-    delete listeners[key];
-  });
-
-  const toListenOn = Object.keys(events)
-    .filter(key => !listeners[key] && typeof currentProps[key] === 'function')
-    .reduce((acc, next) => ((acc[next] = events[next]), acc), {} as EventMapping);
-
-  const newListeners = listenEvents(toListenOn, currentProps, scene);
-
-  return { ...listeners, ...newListeners };
-};
-
-export const unlistenEvents = (
-  listeners: Partial<Listeners>,
-  scene: Scene
-) => {
-  const toListenOff = Object.keys(events).filter(
-    eventKey => listeners[eventKey]
-  );
-
-  toListenOff.forEach(key => {
-    scene.off(events[key], listeners[key]);
-  });
 }

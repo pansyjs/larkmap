@@ -54,10 +54,6 @@ export interface Events {
 
 export type EventMapping = { [T in keyof Events]: string };
 
-export type Listeners = {
-  [T in keyof Events]: (evt: SyntheticEvent<any>) => void // tslint:disable-line:no-any
-};
-
 export interface LarkMapRefAttributes {
   /** 获取 Scene 实例 */
   getScene: () => Scene;
