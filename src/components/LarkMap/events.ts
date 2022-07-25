@@ -1,7 +1,7 @@
+import type { Scene } from '@antv/l7';
 import type { Events, EventMapping, Listeners, } from './types';
 
 export const events: EventMapping = {
-  onLoaded: 'loaded',
   onResize: 'resize',
   onMapMove: 'mapmove',
   onMoveStart: 'movestart',
@@ -15,18 +15,19 @@ export const events: EventMapping = {
 export const listenEvents = (
   partialEvents: EventMapping,
   props: Partial<Events>,
-  map: any
+  scene: Scene,
 ) =>
   Object.keys(partialEvents).reduce(
     (listeners, event) => {
       const propEvent = props[event];
 
       if (propEvent) {
-        const listener = (evt: React.SyntheticEvent<any>) => {
-          propEvent(map, evt);
+        const listener = (e: React.SyntheticEvent<any>) => {
+          console.log(e);
+          propEvent(scene, e);
         };
 
-        map.on(partialEvents[event], listener);
+        scene.on(partialEvents[event], listener);
 
         listeners[event] = listener;
       }
@@ -39,7 +40,7 @@ export const listenEvents = (
 export const updateEvents = (
   listeners: Listeners,
   currentProps: Partial<Events>,
-  map: any
+  scene: Scene
 ) => {
   const toListenOff = Object.keys(events).filter(
     eventKey =>
@@ -47,7 +48,7 @@ export const updateEvents = (
   );
 
   toListenOff.forEach(key => {
-    map.off(events[key], listeners[key]);
+    scene.off(events[key], listeners[key]);
     delete listeners[key];
   });
 
@@ -55,7 +56,7 @@ export const updateEvents = (
     .filter(key => !listeners[key] && typeof currentProps[key] === 'function')
     .reduce((acc, next) => ((acc[next] = events[next]), acc), {} as EventMapping);
 
-  const newListeners = listenEvents(toListenOn, currentProps, map);
+  const newListeners = listenEvents(toListenOn, currentProps, scene);
 
   return { ...listeners, ...newListeners };
 };

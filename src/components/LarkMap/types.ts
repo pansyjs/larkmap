@@ -12,8 +12,6 @@ export type LarkMapContextValue = {
 export type MapEvent = () => void;
 
 export interface Events {
-  /** 地图加载完成触发 */
-  onLoaded: MapEvent;
   /** 地图容器大小改变事件 */
   onResize: MapEvent;
   /** 地图平移时触发事件 */
@@ -44,7 +42,7 @@ export interface LarkMapRefAttributes {
   getMap: () => Scene['map'];
 }
 
-export interface LarkMapProps extends Events, CommonProps, Omit<ISceneConfig, 'id' | 'canvas' | 'map'> {
+export interface LarkMapProps extends Partial<Events>, CommonProps, Omit<ISceneConfig, 'id' | 'canvas' | 'map'> {
   /** 地图类型 */
   mapType?: 'GaodeV1' | 'GaodeV2' | 'Mapbox' | 'Map';
   /** 地图实例，可选，也可以通过配置项自动生成实例 */

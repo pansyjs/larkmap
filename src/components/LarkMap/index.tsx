@@ -27,10 +27,8 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
   const { current: contextValue } = useRef<LarkMapContextValue>({ scene: null, layerManager: null });
 
   useEffect(() => {
-    console.log(sceneInstance);
     if (sceneInstance) {
-      const map = sceneInstance.map;
-      listenEvents(events, props, map);
+      listenEvents(events, props, sceneInstance);
     }
 
   }, [sceneInstance])
