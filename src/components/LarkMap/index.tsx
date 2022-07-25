@@ -4,25 +4,36 @@ import { Scene } from '@antv/l7';
 
 import { LayerManager } from '@/utils';
 import { createMap } from './helper';
+import { events, listenEvents } from './events';
 
 import type { CSSProperties } from 'react';
 import type { LarkMapRefAttributes, LarkMapProps, LarkMapContextValue, } from './types';
 
 export const LarkMapContext = createContext<LarkMapContextValue>(null);
 
-export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>(({
-  style,
-  className,
-  map,
-  mapType,
-  mapOptions,
-  onSceneLoaded,
-  children,
-  ...sceneConfig
-}, ref) => {
+export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, ref) => {
+  const {
+    style,
+    className,
+    map,
+    mapType,
+    mapOptions,
+    onSceneLoaded,
+    children,
+    ...sceneConfig
+  } = props;
   const containerRef = useRef<HTMLDivElement>(null);
   const [sceneInstance, setSceneInstance] = useState<Scene>();
   const { current: contextValue } = useRef<LarkMapContextValue>({ scene: null, layerManager: null });
+
+  useEffect(() => {
+    console.log(sceneInstance);
+    if (sceneInstance) {
+      const map = sceneInstance.map;
+      listenEvents(events, props, map);
+    }
+
+  }, [sceneInstance])
 
   useEffect(() => {
     let scene: Scene;
