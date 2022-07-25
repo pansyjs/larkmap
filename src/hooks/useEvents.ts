@@ -51,7 +51,7 @@ export const useEvents = <Ins extends Instance, Events extends Record<string, st
 
   useUnmount(() => {
     unlistenEvents(listeners.current, ins);
-    listeners.current = {};
+    listeners.current = undefined;
   });
 
   const listenEvents = (

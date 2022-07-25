@@ -4,8 +4,9 @@ import { Scene } from '@antv/l7';
 
 import { LayerManager } from '@/utils';
 import { useEvents } from '@/hooks/useEvents';
+import { usePropsReactive } from '@/hooks/usePropsReactive';
 import { createMap } from './helper';
-import { events } from './events';
+import { events, setterMap, converterMap, } from './config';
 
 import type { CSSProperties } from 'react';
 import type { LarkMapRefAttributes, LarkMapProps, LarkMapContextValue, EventMapping } from './types';
@@ -18,7 +19,7 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
     className,
     map,
     mapType,
-    mapOptions,
+    mapOptions = {},
     onSceneLoaded,
     children,
     ...sceneConfig
@@ -27,6 +28,10 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
   const [sceneInstance, setSceneInstance] = useState<Scene>();
   const { current: contextValue } = useRef<LarkMapContextValue>({ scene: null, layerManager: null });
 
+  usePropsReactive(mapOptions, sceneInstance, {
+    setterMap,
+    converterMap,
+  });
   useEvents<Scene, EventMapping>(sceneInstance, events, props);
 
   useEffect(() => {

@@ -1,3 +1,4 @@
+import type { Scene } from '@antv/l7';
 import type { EventMapping, } from './types';
 
 export const events: EventMapping = {
@@ -31,3 +32,19 @@ export const events: EventMapping = {
   /** 停止拖拽地图时触发。如地图有拖拽缓动效果，则在拽停止，缓动开始前触发 */
   onDragEnd: 'dragend',
 }
+
+export const setterMap = {
+  style(val: string, ins: Scene) {
+    if (ins && val) {
+      ins.setMapStyle(val);
+    }
+  },
+  zoom(val: number, ins: Scene) {
+    if (ins && val) {
+      ins.setZoom(val);
+    }
+  }
+}
+
+
+export const converterMap = {}
