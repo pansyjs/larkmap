@@ -9,7 +9,7 @@ export type LarkMapContextValue = {
   layerManager: LayerManager;
 };
 
-export type MapEvent = () => void;
+export type MapEvent = (e: SyntheticEvent<any>, scene: Scene) => void;
 
 export interface Events {
   /** 地图容器大小改变事件 */
@@ -26,7 +26,30 @@ export interface Events {
   onZoomStart: MapEvent;
   /** 缩放停止时触发 */
   onZoomEnd: MapEvent;
+  /** 鼠标左键点击事件 */
   onClick: MapEvent;
+  /** 鼠标左键双击事件 */
+  onDoubleClick: MapEvent;
+  /** 鼠标在地图上移动时触发 */
+  onMouseMove: MapEvent;
+  /** 鼠标滚轮开始缩放地图时触发 */
+  onMouseWheel: MapEvent;
+  /** 鼠标移入地图容器内时触发 */
+  onMouseOver: MapEvent;
+  /** 鼠标移出地图容器时触发 */
+  onMouseOut: MapEvent;
+  /** 鼠标在地图上单击抬起时触发 */
+  onMouseUp: MapEvent;
+  /** 鼠标在地图上单击抬起时触发 */
+  onMouseDown: MapEvent;
+  /** 鼠标在地图上单击抬起时触发 */
+  onContextMenu: MapEvent;
+  /** 开始拖拽地图时触发 */
+  onDragStart: MapEvent;
+  /** 拖拽地图过程中触发 */
+  onDragging: MapEvent;
+  /** 停止拖拽地图时触发。如地图有拖拽缓动效果，则在拽停止，缓动开始前触发 */
+  onDragEnd: MapEvent;
 }
 
 export type EventMapping = { [T in keyof Events]: string };
