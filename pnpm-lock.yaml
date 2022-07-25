@@ -12,6 +12,7 @@ specifiers:
   '@pansy/react-hooks': ^0.10.2
   '@turf/helpers': ^6.5.0
   '@types/geojson': ^7946.0.10
+  '@types/lodash': ^4.14.182
   '@types/react': ^17
   '@types/react-dom': ^17
   '@umijs/babel-preset-umi': 3.5.30
@@ -20,6 +21,7 @@ specifiers:
   geojson: ^0.5.0
   husky: ^8.0.1
   lint-staged: ^13.0.3
+  lodash: ^4.17.21
   react: ^17.0.2
   react-dom: ^17.0.2
   redbud: 1.0.0-rc.4
@@ -34,12 +36,14 @@ dependencies:
   '@pansy/classnames': 1.0.1
   '@pansy/react-hooks': 0.10.2_react@17.0.2
   geojson: 0.5.0
+  lodash: 4.17.21
 
 devDependencies:
   '@antv/l7': 2.9.16
   '@pansy/dumi-theme-pansy': 1.0.1_sfoxds7t5ydpegc3knd667wn6m
   '@turf/helpers': 6.5.0
   '@types/geojson': 7946.0.10
+  '@types/lodash': 4.14.182
   '@types/react': 17.0.47
   '@types/react-dom': 17.0.17
   '@umijs/babel-preset-umi': 3.5.30
@@ -2658,6 +2662,10 @@ packages:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
       '@types/node': 18.0.6
+    dev: true
+
+  /@types/lodash/4.14.182:
+    resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==}
     dev: true
 
   /@types/mapbox-gl/1.13.3:
