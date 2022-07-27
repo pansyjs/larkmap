@@ -12,6 +12,7 @@
     "start": "dumi dev",
     "dev": "redbud dev",
     "build": "redbud build",
+    "build:doc": "dumi build",
     "release": "walrus release",
     "release:next": "walrus release --tag next",
     "prepare": "husky install"
