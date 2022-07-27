@@ -1,14 +1,16 @@
 import { Marker as L7Marker } from '@antv/l7';
-import { useDeepCompareEffect } from '@pansy/react-hooks';
-import { memo, useEffect, useMemo, useRef, Children } from 'react';
+import { memo, useEffect, useMemo, Children } from 'react';
 import { createPortal } from 'react-dom';
+
+import { useEvents } from '@/hooks/useEvents';
+import { usePropsReactive } from '@/hooks/usePropsReactive';
 import { useScene } from '@/hooks/useScene';
-import type { MarkerProps } from './types';
+import { events, setterMap, converterMap, } from './config';
+
+import type { MarkerProps, EventMapping } from './types';
 
 export const Marker = memo<MarkerProps>((props): React.ReactPortal => {
   const scene = useScene();
-  const thisRef = useRef({ props });
-  thisRef.current.props = props;
 
   const marker = useMemo(() => {
     let hasChildren = false;
@@ -17,26 +19,32 @@ export const Marker = memo<MarkerProps>((props): React.ReactPortal => {
         hasChildren = true;
       }
     });
+
+    let element: null | HTMLDivElement = null;
+
     const options = {
       ...props,
-      element: hasChildren ? document.createElement('div') : null,
+      element,
     };
-    // @ts-ignore
     const l7marker = new L7Marker(options);
-
-    l7marker.on('click', (e: MouseEvent) => {
-      thisRef.current.props.onClick?.(e);
-    });
+    l7marker.setLnglat(options.lngLat);
 
     return l7marker;
   }, []);
 
-  useDeepCompareEffect(() => {
-    marker.setLnglat(props.lngLat);
-  }, [props.lngLat]);
+  usePropsReactive(props, marker, {
+    setterMap,
+    converterMap,
+  });
+  useEvents<L7Marker, EventMapping>(marker, events, props);
 
   useEffect(() => {
-    scene.addMarker(marker);
+    try {
+      scene.addMarker(marker);
+    } catch (error) {
+      console.log(error);
+    }
+
     return () => {
       marker.remove();
     };
