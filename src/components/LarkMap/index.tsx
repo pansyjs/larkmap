@@ -20,7 +20,7 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
     map,
     mapType,
     mapOptions = {},
-    onSceneLoaded,
+    onLoaded,
     children,
     ...sceneConfig
   } = props;
@@ -58,8 +58,8 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
         contextValue.layerManager = layerManager;
 
         scene.once('loaded', () => {
-          if (onSceneLoaded) {
-            onSceneLoaded(scene);
+          if (onLoaded) {
+            onLoaded(scene);
           }
           setSceneInstance(scene);
         });

@@ -40,9 +40,9 @@ export interface Events {
   onMouseOut: MapEvent;
   /** 鼠标在地图上单击抬起时触发 */
   onMouseUp: MapEvent;
-  /** 鼠标在地图上单击抬起时触发 */
+  /** 鼠标在地图上单击按下时触发 */
   onMouseDown: MapEvent;
-  /** 鼠标在地图上单击抬起时触发 */
+  /** 鼠标右键单击事件 */
   onContextMenu: MapEvent;
   /** 开始拖拽地图时触发 */
   onDragStart: MapEvent;
@@ -74,5 +74,5 @@ export interface LarkMapProps extends Partial<Events>, CommonProps, Omit<ISceneC
   mapOptions?: Partial<IMapConfig>;
   children?: ReactNode;
   /** 场景加载成功回调 */
-  onSceneLoaded?: (scene: Scene) => void;
+  onLoaded?: (scene: Scene) => void;
 }
