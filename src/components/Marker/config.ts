@@ -1,4 +1,5 @@
-import type { Marker, ILngLat } from '@antv/l7';
+import type { Marker } from '@antv/l7';
+import type { LngLat } from '@/types';
 import type { EventMapping, } from './types';
 
 export const events: EventMapping = {
@@ -13,7 +14,7 @@ export const events: EventMapping = {
 }
 
 export const setterMap = {
-  lngLat(val: ILngLat, ins: Marker) {
+  lngLat(val: LngLat, ins: Marker) {
     if (ins && val) {
       ins.setLnglat(val);
     }

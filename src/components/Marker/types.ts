@@ -1,9 +1,11 @@
-import type { IMarkerOption, ILngLat, Marker } from '@antv/l7';
+import type { IMarkerOption, Marker } from '@antv/l7';
 import type { SyntheticEvent } from 'react';
+
+import type { LngLat } from '@/types';
 
 export interface Event<ExtData = any> {
   data?: ExtData
-  lngLat: ILngLat;
+  lngLat: LngLat;
   target: SyntheticEvent<any>;
 }
 
@@ -27,7 +29,7 @@ export type EventMapping = { [T in keyof Events]: string };
  */
 export interface MarkerProps<ExtData = any> extends Partial<Events<ExtData>>, Partial<Omit<IMarkerOption, 'element'>> {
   /** 标注点经纬度 */
-  lngLat: ILngLat;
+  lngLat: LngLat;
   /** 子组件 */
   children?: React.ReactNode;
 }

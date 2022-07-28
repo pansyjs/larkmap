@@ -1,3 +1,4 @@
+import type { ILngLat as LngLat } from '@antv/l7'
 import type { CSSProperties } from 'react';
 
 export type CommonProps = {
@@ -16,3 +17,7 @@ export type {
   PartialDrawPolygonOptions,
   PartialDrawRectOptions,
 } from './draw';
+
+export type {
+  LngLat
+}
