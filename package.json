@@ -29,9 +29,11 @@
   "license": "MIT",
   "peerDependencies": {
     "@antv/l7": "^2.8.35",
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {
+    "@babel/runtime": "^7",
     "@antv/l7-component": "^2.9.16",
     "@antv/l7-composite-layers": "0.1.0-alpha.2",
     "@antv/l7-draw": "^3.0.6",
@@ -60,7 +62,7 @@
     "lint-staged": "^13.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "redbud": "1.0.0-rc.6",
+    "redbud": "1.0.0-rc.7",
     "typescript": "^4.7.4"
   },
   "authors": [
