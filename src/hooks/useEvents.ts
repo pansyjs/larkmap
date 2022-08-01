@@ -65,6 +65,9 @@ export const useEvents = <Ins extends Instance, Events extends Record<string, st
 
         if (propEvent) {
           const listener = (e: React.SyntheticEvent<any>) => {
+            if ('lngLat' in e) {
+              e['lnglat'] = e['lngLat'];
+            }
             propEvent(e, ins);
           };
 
