@@ -21,6 +21,10 @@ export default defineConfig({
   navs: [
     null,
     {
+      title: 'L7',
+      path: 'https://l7.antv.vision/zh/docs/api/l7',
+    },
+    {
       title: 'GitHub',
       path: 'https://github.com/pansyjs/lark-map',
     },
