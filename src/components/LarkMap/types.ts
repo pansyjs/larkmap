@@ -9,58 +9,83 @@ export type LarkMapContextValue = {
   layerManager: LayerManager;
 };
 
-export interface Event {
-  type: string;
+export interface MapEvent<T extends EventTypes> {
+  type: T;
+  target: any;
   originEvent: SyntheticEvent;
+}
+
+export interface Event<T extends EventTypes> extends MapEvent<T> {
   lnglat: LngLat;
   pixel: {
     x: number;
     y: number;
   };
-  target: any;
 }
 
-export type EventCallback = (e: Event, scene: Scene) => void;
+export type EventTypes =
+  | 'resize'
+  | 'move'
+  | 'movestart'
+  | 'moveend'
+  | 'zoom'
+  | 'zoomstart'
+  | 'zoomend'
+  | 'click'
+  | 'dblclick'
+  | 'mousemove'
+  | 'mousewheel'
+  | 'mouseover'
+  | 'mouseout'
+  | 'mouseup'
+  | 'mousedown'
+  | 'contextmenu'
+  | 'dragstart'
+  | 'dragging'
+  | 'dragend';
+
+export type MapEventCallback<T extends EventTypes> = (e: MapEvent<T>, scene: Scene) => void;
+export type EventCallback<T extends EventTypes> = (e: Event<T>, scene: Scene) => void;
 
 export interface Events {
   /** 地图容器大小改变事件 */
-  onResize: EventCallback;
+  onResize: (e: undefined, scene: Scene) => void;
   /** 地图平移时触发事件 */
-  onMapMove: EventCallback;
+  onMapMove: MapEventCallback<'movestart'>;
   /** 地图平移开始时触发 */
-  onMoveStart: EventCallback;
+  onMoveStart: MapEventCallback<'movestart'>;
   /** 地图移动结束后触发 */
-  onMoveEnd: EventCallback;
+  onMoveEnd: MapEventCallback<'moveend'>;
   /** 地图缩放级别更改后触发 */
-  onZoomChange: EventCallback;
+  onZoomChange: MapEventCallback<'zoom'>;
   /** 缩放开始时触发 */
-  onZoomStart: EventCallback;
+  onZoomStart: MapEventCallback<'zoomstart'>;
   /** 缩放停止时触发 */
-  onZoomEnd: EventCallback;
+  onZoomEnd: MapEventCallback<'zoomend'>;
   /** 鼠标左键点击事件 */
-  onClick: EventCallback;
+  onClick: EventCallback<'click'>;
   /** 鼠标左键双击事件 */
-  onDoubleClick: EventCallback;
+  onDoubleClick: EventCallback<'dblclick'>;
   /** 鼠标在地图上移动时触发 */
-  onMouseMove: EventCallback;
+  onMouseMove: EventCallback<'mousemove'>;
   /** 鼠标滚轮开始缩放地图时触发 */
-  onMouseWheel: EventCallback;
+  onMouseWheel: EventCallback<'mousewheel'>;
   /** 鼠标移入地图容器内时触发 */
-  onMouseOver: EventCallback;
+  onMouseOver: EventCallback<'mouseover'>;
   /** 鼠标移出地图容器时触发 */
-  onMouseOut: EventCallback;
+  onMouseOut: EventCallback<'mouseout'>;
   /** 鼠标在地图上单击抬起时触发 */
-  onMouseUp: EventCallback;
+  onMouseUp: EventCallback<'mouseup'>;
   /** 鼠标在地图上单击按下时触发 */
-  onMouseDown: EventCallback;
+  onMouseDown: EventCallback<'mousedown'>;
   /** 鼠标右键单击事件 */
-  onContextMenu: EventCallback;
+  onContextMenu: EventCallback<'contextmenu'>;
   /** 开始拖拽地图时触发 */
-  onDragStart: EventCallback;
+  onDragStart: EventCallback<'dragstart'>;
   /** 拖拽地图过程中触发 */
-  onDragging: EventCallback;
+  onDragging: EventCallback<'dragging'>;
   /** 停止拖拽地图时触发。如地图有拖拽缓动效果，则在拽停止，缓动开始前触发 */
-  onDragEnd: EventCallback;
+  onDragEnd: EventCallback<'dragend'>;
 }
 
 export type EventMapping = { [T in keyof Events]: string };

@@ -65,7 +65,8 @@ export const useEvents = <Ins extends Instance, Events extends Record<string, st
 
         if (propEvent) {
           const listener = (e: React.SyntheticEvent<any>) => {
-            if ('lngLat' in e) {
+            // 兼容 Gaode 和 Mapbox 属性不一致问题
+            if (e && 'lngLat' in e) {
               e['lnglat'] = e['lngLat'];
             }
             propEvent(e, ins);

@@ -19,11 +19,63 @@ export default () => {
       {...config}
       style={{ height: 400 }}
       onClick={(e) => {
-        // @ts-ignore
+        console.log(e);
         message.success(`经纬度坐标： ${e.lnglat.lng},${e.lnglat.lat}`)
       }}
-    >
-      <h2 style={{ position: 'absolute', left: '10px' }}>LarkMap</h2>
-    </LarkMap>
-  );
+      // onResize={(e) => {
+      //   console.log(e);
+      // }}
+      // onMapMove={(e) => {
+      //   console.log(e);
+      // }}
+      // onMoveStart={(e) => {
+      //   console.log(e);
+      // }}
+      // onMoveEnd={(e) => {
+      //   console.log(e);
+      // }}
+      // onZoomChange={(e) => {
+      //   console.log(e);
+      // }}
+      // onZoomStart={(e) => {
+      //   console.log(e);
+      // }}
+      // onZoomEnd={(e) => {
+      //   console.log(e);
+      // }}
+      // onDoubleClick={(e) => {
+      //   console.log(e);
+      // }}
+      // onMouseMove={(e) => {
+      //   console.log(e);
+      // }}
+      // onMouseWheel={(e) => {
+      //   console.log(e);
+      // }}
+      // onMouseOver={(e) => {
+      //   console.log(e);
+      // }}
+      // onMouseOut={(e) => {
+      //   console.log(e);
+      // }}
+      // onMouseUp={(e) => {
+      //   console.log(e);
+      // }}
+      // onMouseDown={(e) => {
+      //   console.log(e);
+      // }}
+      // onContextMenu={(e) => {
+      //   console.log(e);
+      // }}
+      // onDragStart={(e) => {
+      //   console.log(e);
+      // }}
+      // onDragging={(e) => {
+      //   console.log(e);
+      // }}
+      // onDragEnd={(e) => {
+      //   console.log(e);
+      // }}
+    />
+  )
 }
