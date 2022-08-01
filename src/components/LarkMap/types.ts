@@ -1,6 +1,6 @@
 import type { ReactNode, SyntheticEvent } from 'react';
 import type { IMapConfig, IMapWrapper, ISceneConfig, Scene } from '@antv/l7';
-import type { CommonProps } from '@/types';
+import type { CommonProps, LngLat } from '@/types';
 
 import type { LayerManager } from '@/utils';
 
@@ -9,47 +9,58 @@ export type LarkMapContextValue = {
   layerManager: LayerManager;
 };
 
-export type MapEvent = (e: SyntheticEvent<any>, scene: Scene) => void;
+export interface Event {
+  type: string;
+  originEvent: SyntheticEvent;
+  lnglat: LngLat;
+  pixel: {
+    x: number;
+    y: number;
+  };
+  target: any;
+}
+
+export type EventCallback = (e: Event, scene: Scene) => void;
 
 export interface Events {
   /** 地图容器大小改变事件 */
-  onResize: MapEvent;
+  onResize: EventCallback;
   /** 地图平移时触发事件 */
-  onMapMove: MapEvent;
+  onMapMove: EventCallback;
   /** 地图平移开始时触发 */
-  onMoveStart: MapEvent;
+  onMoveStart: EventCallback;
   /** 地图移动结束后触发 */
-  onMoveEnd: MapEvent;
+  onMoveEnd: EventCallback;
   /** 地图缩放级别更改后触发 */
-  onZoomChange: MapEvent;
+  onZoomChange: EventCallback;
   /** 缩放开始时触发 */
-  onZoomStart: MapEvent;
+  onZoomStart: EventCallback;
   /** 缩放停止时触发 */
-  onZoomEnd: MapEvent;
+  onZoomEnd: EventCallback;
   /** 鼠标左键点击事件 */
-  onClick: MapEvent;
+  onClick: EventCallback;
   /** 鼠标左键双击事件 */
-  onDoubleClick: MapEvent;
+  onDoubleClick: EventCallback;
   /** 鼠标在地图上移动时触发 */
-  onMouseMove: MapEvent;
+  onMouseMove: EventCallback;
   /** 鼠标滚轮开始缩放地图时触发 */
-  onMouseWheel: MapEvent;
+  onMouseWheel: EventCallback;
   /** 鼠标移入地图容器内时触发 */
-  onMouseOver: MapEvent;
+  onMouseOver: EventCallback;
   /** 鼠标移出地图容器时触发 */
-  onMouseOut: MapEvent;
+  onMouseOut: EventCallback;
   /** 鼠标在地图上单击抬起时触发 */
-  onMouseUp: MapEvent;
+  onMouseUp: EventCallback;
   /** 鼠标在地图上单击按下时触发 */
-  onMouseDown: MapEvent;
+  onMouseDown: EventCallback;
   /** 鼠标右键单击事件 */
-  onContextMenu: MapEvent;
+  onContextMenu: EventCallback;
   /** 开始拖拽地图时触发 */
-  onDragStart: MapEvent;
+  onDragStart: EventCallback;
   /** 拖拽地图过程中触发 */
-  onDragging: MapEvent;
+  onDragging: EventCallback;
   /** 停止拖拽地图时触发。如地图有拖拽缓动效果，则在拽停止，缓动开始前触发 */
-  onDragEnd: MapEvent;
+  onDragEnd: EventCallback;
 }
 
 export type EventMapping = { [T in keyof Events]: string };
