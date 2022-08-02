@@ -47,6 +47,7 @@ export type EventTypes =
 export type MapEventCallback<T extends EventTypes> = (e: MapEvent<T>, scene: Scene) => void;
 export type EventCallback<T extends EventTypes> = (e: Event<T>, scene: Scene) => void;
 
+// TODO: Gaode 和 Mapbox 类型不一致
 export interface Events {
   /** 地图容器大小改变事件 */
   onResize: (e: undefined, scene: Scene) => void;

@@ -22,10 +22,15 @@ export const Marker = memo<MarkerProps>((props): React.ReactPortal => {
 
     let element: null | HTMLDivElement = null;
 
+    if (hasChildren) {
+      element = document.createElement('div');
+    }
+
     const options = {
       ...props,
       element,
     };
+
     const l7marker = new L7Marker(options);
     l7marker.setLnglat(options.lngLat);
 

@@ -24,12 +24,14 @@ export interface Events<ExtData = any> {
 
 export type EventMapping = { [T in keyof Events]: string };
 
-/**
- * 组件类型定义
- */
-export interface MarkerProps<ExtData = any> extends Partial<Events<ExtData>>, Partial<Omit<IMarkerOption, 'element'>> {
+export interface MarkerOption<ExtData = any> extends Partial<Omit<IMarkerOption, 'element' | 'extData'>> {
   /** 标注点经纬度 */
   lngLat: LngLat;
+  /** 额外的数据 */
+  extData: ExtData;
+}
+
+export interface MarkerProps<ExtData = any> extends Partial<Events<ExtData>>, MarkerOption<ExtData> {
   /** 子组件 */
   children?: React.ReactNode;
 }

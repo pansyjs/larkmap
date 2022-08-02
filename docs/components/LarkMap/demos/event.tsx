@@ -1,7 +1,6 @@
 import { message } from 'antd'
 import { LarkMap } from '@pansy/lark-map';
 
-
 import type { LarkMapProps } from '@pansy/lark-map';
 
 const config: LarkMapProps = {

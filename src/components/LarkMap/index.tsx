@@ -52,6 +52,7 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
           map: mapInstance,
         });
 
+        // @ts-ignore
         const layerManager = new LayerManager({ scene });
 
         contextValue.scene = scene;
