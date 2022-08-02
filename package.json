@@ -33,19 +33,18 @@
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7",
     "@antv/l7-component": "^2.9.18",
     "@antv/l7-composite-layers": "0.1.0-alpha.2",
     "@antv/l7-draw": "^3.0.6",
     "@antv/l7-maps": "^2.9.18",
-    "@antv/l7-scene": "^2.9.18",
+    "@babel/runtime": "^7",
     "@pansy/classnames": "^1.0.1",
     "@pansy/react-hooks": "^0.10.2",
     "geojson": "^0.5.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@antv/l7": "^2.9.16",
+    "@antv/l7": "^2.9.18",
     "@pansy/dumi-theme-pansy": "1.0.1",
     "@turf/helpers": "^6.5.0",
     "@types/geojson": "^7946.0.10",
