@@ -16,39 +16,38 @@ export default () => {
     })
   },[])  
   const clusterOption={
-    element:(feature:Feature)=>{
-      const count=feature.properties.point_count
-      if(count>1){
-        const el = document.createElement("label");
-        el.textContent =count;
-        el.addEventListener('click',()=>{
-          console.log(feature)
-        })
-        return el;
-        
-      }else{
-        const el = document.createElement("label");
-        el.textContent = '自定义样式';
-        el.addEventListener('click',()=>{
-          console.log(feature)
-        })
-        return el;
-      }
-    },
     radius: 100,
     maxZoom: 18,
     minZoom: 3
 
   }
+  const elSingele=()=>{
+      const el=document.createElement('label')
+      el.textContent = '自定义样式';
+      return el
+  }
+  const elMulti=(count:number)=>{
+    const el=document.createElement('label')
+    el.textContent = count.toString();
+    return el
+  }
+
   const option={
     cluster:true,
-    clusterOption:clusterOption
+    clusterOption:clusterOption,
+    // zoomOnClick:false,
+    events:(feature:Feature)=>{
+      console.log(feature)
+    },
+    render:elSingele,
+    renderCluster:elMulti
+    
   }
 
   return (
     <>
-     <LarkMap mapType="Mapbox" style={{ height: 300 }}>
-    <MarkerLayer {...option} data={data}></MarkerLayer>
+     <LarkMap mapType="Mapbox" style={{ height: 1300 }}>
+    <MarkerLayer {...option} data={data} ></MarkerLayer>
     </LarkMap>
     </>
    
