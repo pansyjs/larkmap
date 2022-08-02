@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { LarkMapContext } from '@/components/LarkMap';
 
+import type { Scene } from '@antv/l7';
+
 export const useScene = () => {
   const context = useContext(LarkMapContext);
   if (!context) {
@@ -8,5 +10,5 @@ export const useScene = () => {
   }
   const { scene } = context;
 
-  return scene;
+  return scene as Scene;
 };
