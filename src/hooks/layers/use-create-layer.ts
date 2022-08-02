@@ -2,7 +2,7 @@ import { useUpdateEffect } from '@pansy/react-hooks';
 import { useEffect, useRef } from 'react';
 import type { Layer } from '../../utils/layer-manager';
 import type { LayerCommonProps } from '../../types/layer';
-import { useLayerManager } from '../../hooks/layers/use-layer-manager';
+import { useLayerManager } from '../useLayerManager';
 
 /**
  * LayerCtor 图层类 构造函数

@@ -15,6 +15,7 @@ export { PopupProps } from './components/Popup/types';
 
 export { useScene } from './hooks/useScene';
 export { useDraw } from './hooks/useDraw';
+export { useLayerManager } from './hooks/useLayerManager'
 
 /**
  * 图层组件
