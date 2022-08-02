@@ -1,6 +1,6 @@
 import { HeatmapLayer as L7HeatmapLayer } from '@antv/l7-composite-layers';
 import { forwardRef, memo, useImperativeHandle } from 'react';
-import { useCreateLayer } from '../../../hooks/layers/use-create-layer';
+import { useCreateLayer } from '@/hooks/useCreateLayer';
 import type { HeatmapLayerProps } from './types';
 
 export const HeatmapLayer = memo(

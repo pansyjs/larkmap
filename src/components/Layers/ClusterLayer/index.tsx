@@ -1,6 +1,6 @@
 import { PointLayer as L7PointLayer } from '@antv/l7-composite-layers';
 import { forwardRef, memo, useImperativeHandle } from 'react';
-import { useCreateLayer } from '../../../hooks/layers/use-create-layer';
+import { useCreateLayer } from '@/hooks/useCreateLayer';
 import type { ClusterLayerProps } from './types';
 
 export const ClusterLayer = memo(
