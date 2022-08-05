@@ -1,6 +1,6 @@
 ---
-title: HeatmapLayer 热力图图层
-order: 2
+title: MarkerLayer 自定义Marker图层
+order: 4
 group:
   title: 图层组件
   order: 1
@@ -9,14 +9,14 @@ nav:
   path: /components
 ---
 
-# HeatemapLayer 热力图图层
+# MarkerLayer 自定义Marker图层
 
 ## 介绍
 
-热力图图层组件
+Marker图层组件
 
 ## 使用场景
-点数据的聚合展示
+
 ## 代码演示
 
 ### 默认示例

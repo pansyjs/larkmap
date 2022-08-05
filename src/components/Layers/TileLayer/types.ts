@@ -16,7 +16,7 @@ export interface TileLayerProps extends   Partial<IRasterLayerStyleOptions>  {
         minZoom?:number,
         maxZoom?:number,
         //图层范围
-        extent?:[number,number,number,number],
+        extent?:number[],
         //Zoom偏移
         zoomOffset?:number
     },

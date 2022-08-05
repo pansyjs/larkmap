@@ -5,4 +5,5 @@ export { ClusterLayer } from './ClusterLayer';
 export { ClusterLayerProps } from './ClusterLayer/types';
 
 export { TileLayer } from './TileLayer';
-// export { TileLayerProps } from './TileLayer/types';
+
+export { MarkerLayer } from './MarkLayer'
