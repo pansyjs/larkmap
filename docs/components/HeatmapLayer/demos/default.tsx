@@ -1,3 +1,4 @@
+import { HeatmapShape } from '@antv/l7-composite-layers';
 import { LarkMap,HeatmapLayer} from '@pansy/lark-map';
 
 const source = {
@@ -11,7 +12,7 @@ const source = {
 };
 const layerOptions = {
   autoFit: true,
-  shape: 'heatmap',
+  shape: 'heatmap' as HeatmapShape,
   size: {
     field: 't',
     value: [0, 1],

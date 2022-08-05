@@ -46,7 +46,7 @@ export default () => {
 
   return (
     <>
-     <LarkMap mapType="Mapbox" style={{ height: 1300 }}>
+     <LarkMap mapType="GaodeV2" style={{ height: 300 }}>
     <MarkerLayer {...option} data={data} ></MarkerLayer>
     </LarkMap>
     </>

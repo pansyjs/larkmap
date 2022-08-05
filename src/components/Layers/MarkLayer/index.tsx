@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { IMarkerStyleOption, MarkerLayer as L7MarkerLayer } from '@antv/l7-component'
+import { MarkerLayer as L7MarkerLayer } from '@antv/l7-component'
 import { Marker } from '@antv/l7';
 import { useScene } from '@/hooks/useScene';
 

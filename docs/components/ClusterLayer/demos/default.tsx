@@ -1,14 +1,15 @@
 
+import { ScaleTypeName } from '@antv/l7';
 import { LarkMap,ClusterLayer} from '@pansy/lark-map';
 import { useState,useEffect } from 'react';
 
 const theOptions = {
   autoFit: true,
-  shape: 'circle',
+  shape:'circle',
   size:{
     field:'point_count',
     value:[ 5, 10, 15, 20, 25],
-    scale: { type: 'quantile' },
+    scale:{ type: 'quantile' as ScaleTypeName },
   },
   active:true,
   color:'rgb(73,167,86)',
@@ -53,7 +54,8 @@ export default () => {
 
   },[])
   return (
-    <LarkMap mapType="GaodeV1" style={{ height: 300 }}>
+    <LarkMap mapType="GaodeV1" style={{ height: 300} } mapOptions={{style:'dark', zoom: 3}}>
+
       <ClusterLayer source={theSource} {...theOptions}></ClusterLayer>
       <ClusterLayer source={theSource} {...textOptions}></ClusterLayer>
     </LarkMap>
