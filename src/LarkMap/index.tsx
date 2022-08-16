@@ -1,4 +1,4 @@
-import { useRef, useImperativeHandle, useMemo, useEffect, forwardRef } from 'react';
+import React, { useRef, useImperativeHandle, useMemo, useEffect, forwardRef } from 'react';
 import classNames from '@pansy/classnames';
 import { useUpdate } from '@pansy/react-hooks';
 import { Scene } from '@antv/l7';

@@ -3,7 +3,7 @@
     "target": "esnext",
     "moduleResolution": "node",
     "module": "esnext",
-    "jsx": "react-jsx",
+    "jsx": "react",
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
