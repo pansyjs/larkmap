@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@antv/l7': ^2.9.18
+  '@antv/l7': ^2.9.23
   '@antv/l7-component': ^2.9.23
   '@antv/l7-composite-layers': ^0.2.0
   '@antv/l7-draw': ^3.0.8
@@ -19,7 +19,7 @@ specifiers:
   '@umijs/plugin-antd': ^0.15.0
   '@walrus/cli': ^1.3.4
   '@walrus/plugin-release': ^1.14.3
-  antd: ^4.22.2
+  antd: ^4.22.5
   dumi: ^1.1.47
   geojson: ^0.5.0
   husky: ^8.0.1
@@ -32,8 +32,8 @@ specifiers:
 
 dependencies:
   '@antv/l7-component': 2.9.23
-  '@antv/l7-composite-layers': 0.2.0_@antv+l7@2.9.18
-  '@antv/l7-draw': 3.0.8_@antv+l7@2.9.18
+  '@antv/l7-composite-layers': 0.2.0_@antv+l7@2.9.23
+  '@antv/l7-draw': 3.0.8_@antv+l7@2.9.23
   '@antv/l7-maps': 2.9.23
   '@babel/runtime': 7.18.9
   '@pansy/classnames': 1.0.1
@@ -42,7 +42,7 @@ dependencies:
   lodash: 4.17.21
 
 devDependencies:
-  '@antv/l7': 2.9.18
+  '@antv/l7': 2.9.23
   '@pansy/dumi-theme-pansy': 1.0.1_sfoxds7t5ydpegc3knd667wn6m
   '@turf/helpers': 6.5.0
   '@types/geojson': 7946.0.10
@@ -53,7 +53,7 @@ devDependencies:
   '@umijs/plugin-antd': 0.15.0_sfoxds7t5ydpegc3knd667wn6m
   '@walrus/cli': 1.3.4
   '@walrus/plugin-release': 1.14.3_@walrus+cli@1.3.4
-  antd: 4.22.2_sfoxds7t5ydpegc3knd667wn6m
+  antd: 4.22.5_sfoxds7t5ydpegc3knd667wn6m
   dumi: 1.1.47_3tgeifm2vmwrlpqlopppsnjtcu
   husky: 8.0.1
   lint-staged: 13.0.3
@@ -123,18 +123,6 @@ packages:
     resolution: {integrity: sha512-4ddpsiHN9Pd4UIlWuKVK1C4IiZIdbwQvy9i7DUSI3xNJ89FPUFt8lxDYj8GzzfdllV0NkJTRxnG+FvLk0llidg==}
     dev: false
 
-  /@antv/l7-component/2.9.18:
-    resolution: {integrity: sha512-y873Piw2vD1XPstB6HCKDztm0gptz5n7+gl2XjCeHlO+6NLMyaxANDx7OUtQUmSWfDVywElPclsdWTZaaGeU8Q==}
-    dependencies:
-      '@antv/l7-core': 2.9.18
-      '@antv/l7-utils': 2.9.18
-      '@babel/runtime': 7.18.9
-      eventemitter3: 4.0.7
-      inversify: 5.1.1
-      lodash: 4.17.21
-      reflect-metadata: 0.1.13
-      supercluster: 7.1.5
-
   /@antv/l7-component/2.9.23:
     resolution: {integrity: sha512-IaLbu8Ejo5ROyl897TICGvr4hCZV+R2xaqbVIxG8oxNmCOOEK251E+GHTlK7RTthP2mw/yYb4LiohZUFlTMVVQ==}
     dependencies:
@@ -146,35 +134,16 @@ packages:
       lodash: 4.17.21
       reflect-metadata: 0.1.13
       supercluster: 7.1.5
-    dev: false
 
-  /@antv/l7-composite-layers/0.2.0_@antv+l7@2.9.18:
+  /@antv/l7-composite-layers/0.2.0_@antv+l7@2.9.23:
     resolution: {integrity: sha512-13C+VNbEh/P7lSV1n7D5VgWKjBSbnNHk4scDmd9JS4gfRPltHxh3InaMGO1vW+Po5WgyRfmTwi+eIkWDq3UAGw==}
     peerDependencies:
       '@antv/l7': ^2.9.14
     dependencies:
       '@antv/event-emitter': 0.1.3
-      '@antv/l7': 2.9.18
+      '@antv/l7': 2.9.23
       '@antv/util': 2.0.17
     dev: false
-
-  /@antv/l7-core/2.9.18:
-    resolution: {integrity: sha512-itMU94Dk4f/thYZBp9mHbPmOdQiCcm1hlQARNNtOxXTNIdaiy2BHFew05waCoG9HQRJ0em24XzcNmWsk7aCi3g==}
-    dependencies:
-      '@antv/async-hook': 2.1.0
-      '@antv/l7-utils': 2.9.18
-      '@babel/runtime': 7.18.9
-      ajv: 6.12.6
-      element-resize-event: 3.0.6
-      eventemitter3: 4.0.7
-      gl-matrix: 3.4.3
-      inversify: 5.1.1
-      inversify-inject-decorators: 3.1.0
-      l7-tiny-sdf: 0.0.3
-      l7hammerjs: 0.0.7
-      lodash: 4.17.21
-      reflect-metadata: 0.1.13
-      viewport-mercator-project: 6.2.3
 
   /@antv/l7-core/2.9.23:
     resolution: {integrity: sha512-NUfi1YIOgMxOzf/NS7rQK1fUalplUmldse/vuVJNQMLHVPY9XArutXUsqnuDalinXa62jeiUQF2pkUy/tgyrfA==}
@@ -194,14 +163,13 @@ packages:
       lodash: 4.17.21
       reflect-metadata: 0.1.13
       viewport-mercator-project: 6.2.3
-    dev: false
 
-  /@antv/l7-draw/3.0.8_@antv+l7@2.9.18:
+  /@antv/l7-draw/3.0.8_@antv+l7@2.9.23:
     resolution: {integrity: sha512-AIF6Z+7w9aHtlLsX710ig08fKNor1Au/XRFQWcGbJ018KbrHkH4UoTioP19/5tkIFV7Zc3JthgMMNJ0P+W4ToQ==}
     peerDependencies:
       '@antv/l7': ^2.8.35
     dependencies:
-      '@antv/l7': 2.9.18
+      '@antv/l7': 2.9.23
       '@turf/turf': 6.5.0
       eventemitter3: 4.0.7
       lodash: 4.17.21
@@ -212,12 +180,14 @@ packages:
       uuid: 8.3.2
     dev: false
 
-  /@antv/l7-layers/2.9.18:
-    resolution: {integrity: sha512-nO5UeIcBvesVXVWfwKVG3tKrVM6p+zJvEiRcRUw0bvI4uyF1FZ5KM6YLtsuOoSBzBU54LAeWQiEs8SHo4IDAsA==}
+  /@antv/l7-layers/2.9.23:
+    resolution: {integrity: sha512-Iew6wNgpb7OL0wjmo2E9MHFsk9RCQrb791XRC75+7gBrw88O/tJSjpvapH2MHbLn/0cQugLWjC6o1J46hMig9g==}
     dependencies:
-      '@antv/l7-core': 2.9.18
-      '@antv/l7-source': 2.9.18
-      '@antv/l7-utils': 2.9.18
+      '@antv/async-hook': 2.1.0
+      '@antv/l7-core': 2.9.23
+      '@antv/l7-maps': 2.9.23
+      '@antv/l7-source': 2.9.23
+      '@antv/l7-utils': 2.9.23
       '@babel/runtime': 7.18.9
       '@mapbox/martini': 0.2.0
       '@turf/helpers': 6.5.0
@@ -238,16 +208,6 @@ packages:
       polyline-miter-util: 1.0.1
       reflect-metadata: 0.1.13
 
-  /@antv/l7-map/2.9.18:
-    resolution: {integrity: sha512-g2lVjRkWw88kmLXiv9+jdbaMYVk90iSOrzG49UIZgiwum+K725mRt1GZWYH7UoEwGBiuh9yIcn0OkC0i1arfvQ==}
-    dependencies:
-      '@antv/l7-utils': 2.9.18
-      '@babel/runtime': 7.18.9
-      '@mapbox/point-geometry': 0.1.0
-      '@mapbox/unitbezier': 0.0.0
-      eventemitter3: 4.0.7
-      lodash: 4.17.21
-
   /@antv/l7-map/2.9.23:
     resolution: {integrity: sha512-7w0F/ONv5dhRnotdr6Vscxa6UjxjWsqGUgxHU+4qcZTnnDh44l9BQXtxf/BRMgg7pd+sodkP6tZnS/+En9zNjA==}
     dependencies:
@@ -258,23 +218,6 @@ packages:
       eventemitter3: 4.0.7
       gl-matrix: 3.4.3
       lodash: 4.17.21
-    dev: false
-
-  /@antv/l7-maps/2.9.18:
-    resolution: {integrity: sha512-TskpUHvKddJbVrKGXXAH99s3qdEUg4QC/7nB6eIvFb2urydcCUE3yPF2hM72jgfhnzMKZYFFLPuQTsWomKtoAQ==}
-    dependencies:
-      '@amap/amap-jsapi-loader': 0.0.3
-      '@antv/l7-core': 2.9.18
-      '@antv/l7-map': 2.9.18
-      '@antv/l7-utils': 2.9.18
-      '@babel/runtime': 7.18.9
-      '@types/amap-js-api': 1.4.10
-      '@types/mapbox-gl': 1.13.3
-      gl-matrix: 3.4.3
-      inversify: 5.1.1
-      mapbox-gl: 1.13.2
-      reflect-metadata: 0.1.13
-      viewport-mercator-project: 6.2.3
 
   /@antv/l7-maps/2.9.23:
     resolution: {integrity: sha512-2Oq+IQ0vqf7vc317aXaIWb1IaOkTm33BRd45yW0V6rB1LDgUR52PVcQ+YjPoIce8Viiz93RutMxGc4LlENcwiQ==}
@@ -291,38 +234,38 @@ packages:
       mapbox-gl: 1.13.2
       reflect-metadata: 0.1.13
       viewport-mercator-project: 6.2.3
-    dev: false
 
-  /@antv/l7-renderer/2.9.18:
-    resolution: {integrity: sha512-xMUNHUtmSoRUO8BE2DLL7qEOI6r/VPUP/tOiYtbMkrTTWqNTpCjDgSdS2v+pASVh+P8clwD1aHyMo+r0D6cgEw==}
+  /@antv/l7-renderer/2.9.23:
+    resolution: {integrity: sha512-Q8sztieBBS+nQvsfLKlH+Gs6MN6B+u/e17iR+6DjOU6/KgWjQd1Ai/fxnYcBf73zZq1fOSvV2pb8h13CxTn0Mg==}
     dependencies:
-      '@antv/l7-core': 2.9.18
+      '@antv/l7-core': 2.9.23
+      '@antv/l7-utils': 2.9.23
       '@babel/runtime': 7.18.9
       inversify: 5.1.1
       l7regl: 0.0.20
       lodash: 4.17.21
       reflect-metadata: 0.1.13
 
-  /@antv/l7-scene/2.9.18:
-    resolution: {integrity: sha512-q2G79M4gpCdaVkqdHSBRQ4y8+CqgoBJY3OVYUsesOXQlhciKP0dYg/nbj0PXiuDtWQNUCcy8+DbH280gtUbEXQ==}
+  /@antv/l7-scene/2.9.23:
+    resolution: {integrity: sha512-l44Kzb6GZGj35Yh8QNgM+yEdBeW6JzZ/ToWAtMPOak7RlQAQsjwAwS5yeS8UrhJCtnOM9STWKJsVd4/Pxwy/sg==}
     dependencies:
-      '@antv/l7-component': 2.9.18
-      '@antv/l7-core': 2.9.18
-      '@antv/l7-layers': 2.9.18
-      '@antv/l7-maps': 2.9.18
-      '@antv/l7-renderer': 2.9.18
-      '@antv/l7-utils': 2.9.18
+      '@antv/l7-component': 2.9.23
+      '@antv/l7-core': 2.9.23
+      '@antv/l7-layers': 2.9.23
+      '@antv/l7-maps': 2.9.23
+      '@antv/l7-renderer': 2.9.23
+      '@antv/l7-utils': 2.9.23
       '@babel/runtime': 7.18.9
       inversify: 5.1.1
       mapbox-gl: 1.13.2
       reflect-metadata: 0.1.13
 
-  /@antv/l7-source/2.9.18:
-    resolution: {integrity: sha512-Tp13+PPoApIJKqRlWEM48TZti9cT4aMWB7M5HMbRNkeGmeHnrQ9DdhIJmT0GkJPG70fLARotDMhLj+ldGLz4vQ==}
+  /@antv/l7-source/2.9.23:
+    resolution: {integrity: sha512-S50mRAl14p13dmk2GSFcEGXxMezNT4zedBMobjSNN9Rq+On7jiCvCAdlI/zFsSPewVaeZAcz0AnvS+90iQwz1g==}
     dependencies:
       '@antv/async-hook': 2.1.0
-      '@antv/l7-core': 2.9.18
-      '@antv/l7-utils': 2.9.18
+      '@antv/l7-core': 2.9.23
+      '@antv/l7-utils': 2.9.23
       '@babel/runtime': 7.18.9
       '@mapbox/geojson-rewind': 0.5.2
       '@mapbox/vector-tile': 1.3.1
@@ -338,14 +281,6 @@ packages:
       reflect-metadata: 0.1.13
       supercluster: 7.1.5
 
-  /@antv/l7-utils/2.9.18:
-    resolution: {integrity: sha512-x61KB5Z/k02pMRfZAXAxPKlBigdctzrJCkiBSvZZfY8oFvYhboDSiziQ3Fhl3uM3+gnkeUfzAlKuteo5lTfPKA==}
-    dependencies:
-      '@babel/runtime': 7.18.9
-      '@turf/bbox-polygon': 6.5.0
-      '@turf/helpers': 6.5.0
-      d3-color: 1.4.1
-
   /@antv/l7-utils/2.9.23:
     resolution: {integrity: sha512-yr0w9urStpkgUtvAya97I8nXr2ZLfixpftTuArqOw1lQ0KTsnJzrKVyNnziMV/fidbP/Y0ILW4KONbZ0BmmrMg==}
     dependencies:
@@ -357,18 +292,17 @@ packages:
       eventemitter3: 4.0.7
       gl-matrix: 3.4.3
       web-worker-helper: 0.0.3
-    dev: false
 
-  /@antv/l7/2.9.18:
-    resolution: {integrity: sha512-D575riHBeGPAMTmN6z4JCd1770B/MMqUOtjpjwaTyzfp3KPPxG/S8Rz//cdXps4RcWnucXjPC10Ml/WN+AIuxQ==}
+  /@antv/l7/2.9.23:
+    resolution: {integrity: sha512-gDpdQRg1+xuXXriwwKXSWtdYlMQ/n6RNWgJgyKF8Lc0u6j+fu61Qw5YHvgDnrHKHpIPRQdBK6+CQy2Oas8n5Dg==}
     dependencies:
-      '@antv/l7-component': 2.9.18
-      '@antv/l7-core': 2.9.18
-      '@antv/l7-layers': 2.9.18
-      '@antv/l7-maps': 2.9.18
-      '@antv/l7-scene': 2.9.18
-      '@antv/l7-source': 2.9.18
-      '@antv/l7-utils': 2.9.18
+      '@antv/l7-component': 2.9.23
+      '@antv/l7-core': 2.9.23
+      '@antv/l7-layers': 2.9.23
+      '@antv/l7-maps': 2.9.23
+      '@antv/l7-scene': 2.9.23
+      '@antv/l7-source': 2.9.23
+      '@antv/l7-utils': 2.9.23
       '@babel/runtime': 7.18.9
 
   /@antv/util/2.0.17:
@@ -3850,7 +3784,7 @@ packages:
       '@umijs/preset-dumi': 1.x
       react: ^16.13.1
     dependencies:
-      antd: 4.22.2_sfoxds7t5ydpegc3knd667wn6m
+      antd: 4.22.5_sfoxds7t5ydpegc3knd667wn6m
       axios: 0.27.2
       prism-react-renderer: 1.3.5_react@17.0.2
       prismjs: 1.28.0
@@ -3858,6 +3792,7 @@ packages:
       rc-tabs: 11.16.1_sfoxds7t5ydpegc3knd667wn6m
       react: 17.0.2
     transitivePeerDependencies:
+      - '@testing-library/dom'
       - debug
       - react-dom
     dev: true
@@ -4750,6 +4685,13 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       defer-to-connect: 2.0.1
+    dev: true
+
+  /@testing-library/user-event/14.4.3:
+    resolution: {integrity: sha512-kCUc5MEwaEMakkO5x7aoD+DLi02ehmEM2QCGWvNqAS1dV/fAvORWEjnjsEIvml59M7Y5kCkWN6fCCyPOe8OL6Q==}
+    engines: {node: '>=12', npm: '>=6'}
+    peerDependencies:
+      '@testing-library/dom': '>=7.21.4'
     dev: true
 
   /@tootallnate/once/1.1.2:
@@ -6353,9 +6295,10 @@ packages:
     peerDependencies:
       umi: 3.x
     dependencies:
-      antd: 4.22.2_sfoxds7t5ydpegc3knd667wn6m
+      antd: 4.22.5_sfoxds7t5ydpegc3knd667wn6m
       semver: 7.3.7
     transitivePeerDependencies:
+      - '@testing-library/dom'
       - react
       - react-dom
     dev: true
@@ -6924,8 +6867,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /antd/4.22.2_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-3zyJ0Z9LaloCII0OLv7GUjKvigrmj44whPrNqrbLhcdc2O2oJNGtlPUf5bkrn98RIZSQ+EjXOuTlUSRbDjvLJA==}
+  /antd/4.22.5_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-+qIEyzsenM9bllZHfE6ueZbI9EWulCIWeQhUeiIC6p8J2+M8w2tG2t6anbxxsOb5FnmML60ipVLL/rbm+oFKyw==}
     peerDependencies:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'
@@ -6935,6 +6878,7 @@ packages:
       '@ant-design/react-slick': 0.29.2_react@17.0.2
       '@babel/runtime': 7.18.9
       '@ctrl/tinycolor': 3.4.1
+      '@testing-library/user-event': 14.4.3
       classnames: 2.3.1
       copy-to-clipboard: 3.3.1
       lodash: 4.17.21
@@ -6944,13 +6888,13 @@ packages:
       rc-checkbox: 2.3.2_sfoxds7t5ydpegc3knd667wn6m
       rc-collapse: 3.3.1_sfoxds7t5ydpegc3knd667wn6m
       rc-dialog: 8.9.0_sfoxds7t5ydpegc3knd667wn6m
-      rc-drawer: 5.1.0-alpha.2_sfoxds7t5ydpegc3knd667wn6m
+      rc-drawer: 5.1.0_sfoxds7t5ydpegc3knd667wn6m
       rc-dropdown: 4.0.1_sfoxds7t5ydpegc3knd667wn6m
       rc-field-form: 1.27.1_sfoxds7t5ydpegc3knd667wn6m
       rc-image: 5.7.0_sfoxds7t5ydpegc3knd667wn6m
       rc-input: 0.0.1-alpha.7_sfoxds7t5ydpegc3knd667wn6m
       rc-input-number: 7.3.6_sfoxds7t5ydpegc3knd667wn6m
-      rc-mentions: 1.9.0_sfoxds7t5ydpegc3knd667wn6m
+      rc-mentions: 1.9.1_sfoxds7t5ydpegc3knd667wn6m
       rc-menu: 9.6.0_sfoxds7t5ydpegc3knd667wn6m
       rc-motion: 2.6.2_sfoxds7t5ydpegc3knd667wn6m
       rc-notification: 4.6.0_sfoxds7t5ydpegc3knd667wn6m
@@ -6976,6 +6920,8 @@ packages:
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       scroll-into-view-if-needed: 2.2.29
+    transitivePeerDependencies:
+      - '@testing-library/dom'
     dev: true
 
   /anymatch/3.1.2:
@@ -14993,8 +14939,8 @@ packages:
       react-dom: 17.0.2_react@17.0.2
     dev: true
 
-  /rc-drawer/5.1.0-alpha.2_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-tDT2WG9j4zLUL1kw7BJ1u+cCDypqgonwVO3OwIzksyqeqeLKWRJCwRSxwLYDsuVeCoXFndCGZ7qmRUG83z6mOQ==}
+  /rc-drawer/5.1.0_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-pU3Tsn99pxGdYowXehzZbdDVE+4lDXSGb7p8vA9mSmr569oc2Izh4Zw5vLKSe/Xxn2p5MSNbLVqD4tz+pK6SOw==}
     peerDependencies:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'
@@ -15075,8 +15021,8 @@ packages:
       react-dom: 17.0.2_react@17.0.2
     dev: true
 
-  /rc-mentions/1.9.0_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-CSC2t8WxK8daS8lylJcquzCgKz4bXLAVNrSHXlTI8fNUy4toot8Sv79wT4fcP/bYgdt07/e3RXzkZfX6xjYYow==}
+  /rc-mentions/1.9.1_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-6VBaEkJjYdGGxAygQvE2NaIegAzLJSDodgzpoV+vonUUCZ4A/d8izVlc2JqCYa0Yi15HiDcWyfRgJYI7OKTILg==}
     peerDependencies:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'
@@ -17717,7 +17663,6 @@ packages:
 
   /web-worker-helper/0.0.3:
     resolution: {integrity: sha512-/TllNPjGenDwjE67M16TD9ALwuY847/zIoH7r+e5rSeG4kEa3HiMTAsUDj80yzIzhtshkv215KfsnQ/RXR3nVA==}
-    dev: false
 
   /webidl-conversions/3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
