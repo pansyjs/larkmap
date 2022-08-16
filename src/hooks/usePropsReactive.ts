@@ -21,7 +21,7 @@ const getNotEventProps = (props: Record<string, any> = {}) => {
 
 export function usePropsReactive<P extends object = {}>(
   props: P,
-  instance: any,
+  insRef: React.MutableRefObject<any>,
   {
     setterMap = {},
     converterMap = {}
@@ -32,14 +32,14 @@ export function usePropsReactive<P extends object = {}>(
 
   useDeepCompareEffect(
     () => {
-      if (!instance) return;
+      if (!insRef.current) return;
       reactivePropChange(notEventProps, true);
     },
     [notEventProps]
   );
 
   const reactivePropChange = (nextProps: P, shouldDetectChange = true) => {
-    if (!instance) return;
+    if (!insRef.current) return;
 
     try {
       Object.keys(nextProps).forEach((key) => {
@@ -57,12 +57,12 @@ export function usePropsReactive<P extends object = {}>(
         }
 
         if (key in setterMap) {
-          setterMap[key](setterParam, instance)
+          setterMap[key](setterParam, insRef.current)
         } else {
           const trySetterName = `set${toCapitalString(key)}`;
 
-          if (trySetterName in instance) {
-            instance[trySetterName](setterParam);
+          if (trySetterName in insRef.current) {
+            insRef.current[trySetterName](setterParam);
           }
         }
       })
@@ -79,4 +79,12 @@ export function usePropsReactive<P extends object = {}>(
   const detectPropChange = (key: string, nextProps: P, oldProps: P) => {
     return !isEqual(nextProps[key], oldProps[key])
   }
+
+  const onInstanceCreated = () => {
+    console.log(insRef.current);
+    console.log(props);
+    reactivePropChange(props, false)
+  }
+
+  return { onInstanceCreated }
 }

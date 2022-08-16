@@ -1,5 +1,6 @@
-import { useRef, useImperativeHandle, useMemo, useEffect, useState, forwardRef, createContext } from 'react';
+import { useRef, useImperativeHandle, useMemo, useEffect, forwardRef, createContext } from 'react';
 import classNames from '@pansy/classnames';
+import { useUpdate } from '@pansy/react-hooks';
 import { Scene } from '@antv/l7';
 
 import { LayerManager } from '@/utils';
@@ -24,15 +25,16 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
     children,
     ...sceneConfig
   } = props;
+  const update = useUpdate();
   const containerRef = useRef<HTMLDivElement>(null);
-  const [sceneInstance, setSceneInstance] = useState<Scene>();
+  const sceneRef = useRef<Scene>();
   const { current: contextValue } = useRef<LarkMapContextValue>({ scene: null, layerManager: null });
 
-  usePropsReactive(mapOptions, sceneInstance, {
+  usePropsReactive(mapOptions, sceneRef, {
     setterMap,
     converterMap,
   });
-  useEvents<Scene, EventMapping>(sceneInstance, events, props);
+  useEvents<Scene, EventMapping>(sceneRef.current, events, props);
 
   useEffect(() => {
     let scene: Scene;
@@ -52,7 +54,6 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
           map: mapInstance,
         });
 
-        // @ts-ignore
         const layerManager = new LayerManager({ scene });
 
         contextValue.scene = scene;
@@ -62,7 +63,8 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
           if (onLoaded) {
             onLoaded(scene);
           }
-          setSceneInstance(scene);
+          sceneRef.current = scene;
+          update();
         });
       })
       .catch((error) => {
@@ -82,10 +84,10 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
   useImperativeHandle(
     ref,
     () => ({
-      getScene: () => sceneInstance,
-      getMap: () => sceneInstance.map
+      getScene: () => sceneRef.current,
+      getMap: () => sceneRef.current.map
     }),
-    [sceneInstance]
+    [sceneRef]
   );
 
   const styles: CSSProperties = useMemo(
@@ -100,7 +102,7 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
 
   return (
     <div ref={containerRef} style={styles} className={classNames('larkmap', className)}>
-      {sceneInstance && <LarkMapContext.Provider value={contextValue}>{children}</LarkMapContext.Provider>}
+      {sceneRef.current && <LarkMapContext.Provider value={contextValue}>{children}</LarkMapContext.Provider>}
     </div>
   );
 });

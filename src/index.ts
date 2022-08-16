@@ -10,6 +10,8 @@ export { ScaleProps } from './Scale/types';
 export { Marker } from './Marker';
 export { MarkerProps } from './Marker/types';
 
+export { MarkerCluster } from './MarkerCluster';
+
 export { Popup } from './Popup';
 export { PopupProps } from './Popup/types';
 

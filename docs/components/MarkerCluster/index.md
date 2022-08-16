@@ -1,5 +1,5 @@
 ---
-title: MarkerLayer 自定义Marker图层
+title: MarkerCluster 点聚合
 order: 4
 group:
   title: 图层组件
@@ -9,7 +9,7 @@ nav:
   path: /components
 ---
 
-# MarkerLayer 自定义Marker图层
+# MarkerCluster 点聚合
 
 ## 介绍
 
