@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { LarkMapContext } from '@/components/LarkMap';
+import { LarkMapContext } from '@/LarkMap';
 
 import type { Scene } from '@antv/l7';
 

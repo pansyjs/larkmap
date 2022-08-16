@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { LarkMapContext } from '@/components/LarkMap';
+import { LarkMapContext } from '@/LarkMap';
 
 export const useLayerManager = () => {
   const context = useContext(LarkMapContext);

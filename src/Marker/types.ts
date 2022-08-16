@@ -28,7 +28,7 @@ export interface MarkerOption<ExtData = any> extends Partial<Omit<IMarkerOption,
   /** 标注点经纬度 */
   lngLat: LngLat;
   /** 额外的数据 */
-  extData: ExtData;
+  extData?: ExtData;
 }
 
 export interface MarkerProps<ExtData = any> extends Partial<Events<ExtData>>, MarkerOption<ExtData> {
