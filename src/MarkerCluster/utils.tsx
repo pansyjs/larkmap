@@ -16,17 +16,3 @@ export const renderMarker = (
 
   render(<>{child}</>, ele);
 };
-
-export const renderCluster = (
-  ele: HTMLDivElement,
-  clusterRender: MarkerClusterProps['renderCluster'],
-  args: ElementArgs,
-) => {
-  let child: string | React.ReactNode = clusterRender;
-
-  if (isFunction(clusterRender)) {
-    child = clusterRender(args);
-  }
-
-  render(<>{child}</>, ele);
-};

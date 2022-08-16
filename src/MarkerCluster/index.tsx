@@ -4,7 +4,7 @@ import { useUpdate } from '@pansy/react-hooks';
 
 import { LarkMapContext } from '@/LarkMap';
 import { usePropsReactive } from '@/hooks/usePropsReactive';
-import { renderMarker, renderCluster } from './utils';
+import { renderMarker } from './utils';
 import { setterMap, converterMap } from './config';
 
 import type { PropsWithChildren } from 'react';
@@ -53,8 +53,8 @@ function InternalMarkerCluster<D extends { lngLat: LngLat } = any>(
     const { disabledDrillDownMaxZoom } = props;
     // @ts-ignore;
     const centerZoom = scene.map.getZoom();
-    // @ts-ignore
-    if (opts.properties.cluster && (disabledDrillDownMaxZoom && centerZoom <= disabledDrillDownMaxZoom)) {
+
+    if ('type' in opts && (disabledDrillDownMaxZoom && centerZoom <= disabledDrillDownMaxZoom)) {
       const coor = opts.geometry?.coordinates;
 
       if (coor && coor.length === 2) {
@@ -80,12 +80,10 @@ function InternalMarkerCluster<D extends { lngLat: LngLat } = any>(
         handleClick(args)
       });
 
-      if (args.type === 'Feature' && props.render) {
-        renderMarker(el, props.render, args);
-      }
-
-      if (args.type !== 'Feature' && props.renderCluster) {
-        renderCluster(el, props.renderCluster, args);
+      if ('type' in args && args.type === 'Feature') {
+        props.renderCluster && renderMarker(el, props.renderCluster, args);
+      } else {
+        props.render && renderMarker(el, props.render, args);
       }
 
       return el;

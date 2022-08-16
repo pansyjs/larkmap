@@ -25,13 +25,13 @@ export interface ClusterProperties<D = any> {
 }
 
 export interface Feature<D = any> {
-  id: string;
-  type: 'Feature';
+  id?: string;
+  type?: 'Feature';
   geometry: Geometry;
-  properties: D;
+  properties: ClusterProperties<D>;
 }
 
-export type ElementArgs<D = any> = Feature<ClusterProperties<D>> | Feature<Properties<D>>
+export type ElementArgs<D = any> = Feature<D> | Properties<D>;
 
 export type RenderMarkerFun<D = any> = (data: D) => React.ReactNode | string;
 
@@ -46,9 +46,9 @@ export interface MarkerClusterProps<D extends object = any> extends Partial<IMar
   /** 禁用下钻逻辑的最大层级 */
   disabledDrillDownMaxZoom?: number;
   /** 非聚合点渲染扩展 */
-  render?: React.ReactNode | string | RenderMarkerFun<Feature<Properties<D>>>;
+  render?: React.ReactNode | string | RenderMarkerFun<Properties<D>>;
   /** 聚合点渲染扩展 */
-  renderCluster?: React.ReactNode | string | RenderMarkerFun<Feature<ClusterProperties<D>>>;
+  renderCluster?: React.ReactNode | string | RenderMarkerFun<Feature<D>>;
   /** 获取聚合点经度 */
   getLng?: (data: D) => number;
   /** 获取聚合点纬度 */
