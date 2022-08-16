@@ -1,4 +1,4 @@
-export { LayerManager } from './layer-manager';
+export { LayerManager } from './layerManager';
 
 /**
  * 将字符串的首字母大写

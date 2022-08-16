@@ -8,7 +8,7 @@ import { renderMarker, renderCluster } from './utils';
 import { setterMap, converterMap } from './config';
 
 import type { PropsWithChildren } from 'react';
-import type { MarkerLayerOption, MarkerClusterProps, LngLat, ClusterElementArgs } from './types';
+import type { MarkerLayerOption, MarkerClusterProps, LngLat, ElementArgs } from './types';
 
 function InternalMarkerCluster<D extends { lngLat: LngLat } = any>(
   props: MarkerClusterProps<D>,
@@ -49,12 +49,21 @@ function InternalMarkerCluster<D extends { lngLat: LngLat } = any>(
     });
   }
 
-  const handleDrilling = (opts: ClusterElementArgs)=>{
-    const coor = opts.geometry?.coordinates;
+  const handleClick = (opts: ElementArgs<D>) => {
+    const { disabledDrillDownMaxZoom } = props;
+    // @ts-ignore;
+    const centerZoom = scene.map.getZoom();
+    // @ts-ignore
+    if (opts.properties.cluster && (disabledDrillDownMaxZoom && centerZoom <= disabledDrillDownMaxZoom)) {
+      const coor = opts.geometry?.coordinates;
 
-    coor && scene.setCenter(coor);
+      if (coor && coor.length === 2) {
+        scene.setCenter(coor);
+        scene.zoomIn()
+      }
+    }
 
-    scene.zoomIn()
+    props.onClick?.(opts)
   }
 
   const createOptions = () => {
@@ -64,17 +73,20 @@ function InternalMarkerCluster<D extends { lngLat: LngLat } = any>(
       options.clusterOption = {};
     }
 
-    options.clusterOption.element = (args: ClusterElementArgs) => {
+    options.clusterOption.element = (args: ElementArgs<D>) => {
       let el = document.createElement('div');
 
+      el.addEventListener('click', () => {
+        handleClick(args)
+      });
+
+      // @ts-ignore
       if (!args.properties.cluster && props.render) {
         renderMarker(el, props.render, args);
       }
 
+      // @ts-ignore
       if (args?.properties?.point_count > 1 && props.renderCluster) {
-        el.addEventListener('click', () => {
-          handleDrilling(args)
-        })
         renderCluster(el, props.renderCluster, args);
       }
 

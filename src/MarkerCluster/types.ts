@@ -3,12 +3,13 @@ import type { IMarkerLayerOption } from '@antv/l7';
 import type { LngLat } from '@/types';
 
 export interface Geometry {
-  type: string;
+  type: 'Point';
+  /** 经纬度 */
   coordinates: [number, number],
 }
 
 export interface ClusterProperties<D = any> {
-  cluster: boolean;
+  cluster: true;
   cluster_id: string;
   clusterData: {
     geometry: Geometry;
@@ -23,14 +24,16 @@ export interface MarkerElementArgs<D = any> {
   properties: D & { marker_id: string; };
 }
 
-export interface ClusterElementArgs<D = any> {
+export interface Feature<D = any> {
   id: string;
-  type: string;
+  type: 'Feature';
   geometry: Geometry;
   properties: ClusterProperties<D>;
 }
 
-export type RenderMarkerFun = (data: ClusterElementArgs) => React.ReactNode | string;
+export type ElementArgs<D = any> = Feature<D> | MarkerElementArgs<D>
+
+export type RenderMarkerFun<D = any> = (data: ElementArgs<D>) => React.ReactNode | string;
 
 export interface MarkerClusterProps<D extends object = any> extends Partial<IMarkerLayerOption> {
   /** 需要聚合的数据 */
@@ -40,14 +43,18 @@ export interface MarkerClusterProps<D extends object = any> extends Partial<IMar
    * @default true
    */
   zoomOnClick?: boolean,
+  /** 禁用下钻逻辑的最大层级 */
+  disabledDrillDownMaxZoom?: number;
   /** 非聚合点渲染扩展 */
-  render?: React.ReactNode | string | RenderMarkerFun;
+  render?: React.ReactNode | string | RenderMarkerFun<D>;
   /** 聚合点渲染扩展 */
-  renderCluster?: React.ReactNode | string | RenderMarkerFun;
+  renderCluster?: React.ReactNode | string | RenderMarkerFun<D>;
   /** 获取聚合点经度 */
   getLng?: (data: D) => number;
   /** 获取聚合点纬度 */
   getLat?: (data: D) => number;
+  /** 聚合点点击事件 */
+  onClick?: (e: ElementArgs<D>) => void;
 }
 
 export type { IMarkerLayerOption as MarkerLayerOption, LngLat }

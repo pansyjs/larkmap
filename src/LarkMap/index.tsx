@@ -1,4 +1,4 @@
-import { useRef, useImperativeHandle, useMemo, useEffect, forwardRef, createContext } from 'react';
+import { useRef, useImperativeHandle, useMemo, useEffect, forwardRef } from 'react';
 import classNames from '@pansy/classnames';
 import { useUpdate } from '@pansy/react-hooks';
 import { Scene } from '@antv/l7';
@@ -7,12 +7,11 @@ import { LayerManager } from '@/utils';
 import { useEvents } from '@/hooks/useEvents';
 import { usePropsReactive } from '@/hooks/usePropsReactive';
 import { createMap } from './helper';
+import { LarkMapContext } from './context';
 import { events, setterMap, converterMap, } from './config';
 
 import type { CSSProperties } from 'react';
 import type { LarkMapRefAttributes, LarkMapProps, LarkMapContextValue, EventMapping } from './types';
-
-export const LarkMapContext = createContext<LarkMapContextValue>(null);
 
 export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, ref) => {
   const {
@@ -112,3 +111,5 @@ LarkMap.defaultProps = {
   logoVisible: false,
   mapOptions: {},
 };
+
+export { LarkMapContext }

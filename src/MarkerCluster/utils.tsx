@@ -1,12 +1,12 @@
 import { render } from 'react-dom';
 import isFunction from 'lodash/isFunction';
 
-import type { MarkerClusterProps, ClusterElementArgs, } from './types';
+import type { MarkerClusterProps, ElementArgs, } from './types';
 
 export const renderMarker = (
   ele: HTMLDivElement,
   markerRender: MarkerClusterProps['render'],
-  args: ClusterElementArgs,
+  args: ElementArgs,
 ) => {
   let child: string | React.ReactNode = markerRender;
 
@@ -20,7 +20,7 @@ export const renderMarker = (
 export const renderCluster = (
   ele: HTMLDivElement,
   clusterRender: MarkerClusterProps['renderCluster'],
-  args: ClusterElementArgs,
+  args: ElementArgs,
 ) => {
   let child: string | React.ReactNode = clusterRender;
 

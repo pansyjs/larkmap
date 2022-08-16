@@ -25,6 +25,7 @@ export default () => {
   return (
     <LarkMap mapType="GaodeV1" style={{ height: 500 }}>
       <MarkerCluster<ServiceData>
+        disabledDrillDownMaxZoom={6}
         data={data}
         render={
           <Avatar
@@ -37,12 +38,16 @@ export default () => {
             <Avatar
               style={{ backgroundColor: '#87d068' }}
             >
+              {/* @ts-ignore */}
               {properties.point_count}
             </Avatar>
           )
         }}
         getLat={(item) => item.y}
         getLng={(item) => item.x}
+        onClick={(item) => {
+          console.log(item);
+        }}
       />
     </LarkMap>
   );
