@@ -37,7 +37,7 @@ export const Marker = memo<MarkerProps>((props): React.ReactPortal => {
     return l7marker;
   }, []);
 
-  usePropsReactive(props, marker, {
+  usePropsReactive(props, { current: marker }, {
     setterMap,
     converterMap,
   });

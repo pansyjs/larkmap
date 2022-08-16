@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useUpdateEffect } from '@pansy/react-hooks';
 import { RasterLayer as L7RasterLayer } from '@antv/l7';
 
