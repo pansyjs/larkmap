@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@ant-design/icons': ^4.7.0
   '@antv/l7': ^2.9.23
   '@antv/l7-component': ^2.9.23
   '@antv/l7-composite-layers': ^0.2.0
@@ -42,6 +43,7 @@ dependencies:
   lodash: 4.17.21
 
 devDependencies:
+  '@ant-design/icons': 4.7.0_sfoxds7t5ydpegc3knd667wn6m
   '@antv/l7': 2.9.23
   '@pansy/dumi-theme-pansy': 1.0.1_sfoxds7t5ydpegc3knd667wn6m
   '@turf/helpers': 6.5.0

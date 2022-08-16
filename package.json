@@ -44,6 +44,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@antv/l7": "^2.9.23",
     "@pansy/dumi-theme-pansy": "1.0.1",
     "@turf/helpers": "^6.5.0",
