@@ -38,7 +38,6 @@ export default () => {
             <Avatar
               style={{ backgroundColor: '#87d068' }}
             >
-              {/* @ts-ignore */}
               {properties.point_count}
             </Avatar>
           )

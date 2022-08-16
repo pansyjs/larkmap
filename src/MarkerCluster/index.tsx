@@ -80,13 +80,11 @@ function InternalMarkerCluster<D extends { lngLat: LngLat } = any>(
         handleClick(args)
       });
 
-      // @ts-ignore
-      if (!args.properties.cluster && props.render) {
+      if (args.type === 'Feature' && props.render) {
         renderMarker(el, props.render, args);
       }
 
-      // @ts-ignore
-      if (args?.properties?.point_count > 1 && props.renderCluster) {
+      if (args.type !== 'Feature' && props.renderCluster) {
         renderCluster(el, props.renderCluster, args);
       }
 
