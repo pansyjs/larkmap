@@ -1,17 +1,17 @@
-export { LarkMap } from './components/LarkMap';
-export type { LarkMapProps } from './components/LarkMap/types';
+export { LarkMap } from './LarkMap';
+export type { LarkMapProps } from './LarkMap/types';
 
-export { Zoom } from './components/Zoom';
-export { ZoomProps } from './components/Zoom/types';
+export { Zoom } from './Zoom';
+export { ZoomProps } from './Zoom/types';
 
-export { Scale } from './components/Scale';
-export { ScaleProps } from './components/Scale/types';
+export { Scale } from './Scale';
+export { ScaleProps } from './Scale/types';
 
-export { Marker } from './components/Marker';
-export { MarkerProps } from './components/Marker/types';
+export { Marker } from './Marker';
+export { MarkerProps } from './Marker/types';
 
-export { Popup } from './components/Popup';
-export { PopupProps } from './components/Popup/types';
+export { Popup } from './Popup';
+export { PopupProps } from './Popup/types';
 
 export { useScene } from './hooks/useScene';
 export { useDraw } from './hooks/useDraw';
@@ -21,4 +21,4 @@ export { useCreateLayer } from './hooks/useCreateLayer';
 /**
  * 图层组件
  */
- export * from './components/Layers';
+ export * from './Layers';
