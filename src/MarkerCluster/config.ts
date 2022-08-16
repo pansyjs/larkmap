@@ -1,14 +1,24 @@
 import { Marker } from '@antv/l7';
 import isNil from 'lodash/isNil';
 import isArray from 'lodash/isArray';
+
 import type { MarkerLayer } from '@antv/l7';
+import type { MarkerClusterProps } from './types';
 
 export const setterMap = {
-  data(val: any[] = [], ins: MarkerLayer) {
+  data(val: any[] = [], ins: MarkerLayer, props: MarkerClusterProps) {
     if (ins && isArray(val) && val.length) {
       val.forEach(item => {
-        if (item.lngLat && !isNil(item.lngLat.lng) && !isNil(item.lngLat.lat)) {
-          const marker = new Marker().setLnglat(item.lngLat);
+        const lng = props?.getLng(item) ?? item.lngLat.lng;
+        const lat = props?.getLat(item) ?? item.lngLat.lat;
+
+        if (!isNil(lng) && !isNil(lat)) {
+          const marker = new Marker({
+            extData: item,
+          }).setLnglat({
+            lng,
+            lat
+          });
           ins.addMarker(marker);
         }
       });

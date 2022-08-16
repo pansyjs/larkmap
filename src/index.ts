@@ -2,18 +2,19 @@ export { LarkMap } from './LarkMap';
 export type { LarkMapProps } from './LarkMap/types';
 
 export { Zoom } from './Zoom';
-export { ZoomProps } from './Zoom/types';
+export type { ZoomProps } from './Zoom/types';
 
 export { Scale } from './Scale';
-export { ScaleProps } from './Scale/types';
+export type { ScaleProps } from './Scale/types';
 
 export { Marker } from './Marker';
-export { MarkerProps } from './Marker/types';
+export type { MarkerProps } from './Marker/types';
 
 export { MarkerCluster } from './MarkerCluster';
+export type { MarkerClusterProps } from './MarkerCluster/types';
 
 export { Popup } from './Popup';
-export { PopupProps } from './Popup/types';
+export type { PopupProps } from './Popup/types';
 
 export { useScene } from './hooks/useScene';
 export { useDraw } from './hooks/useDraw';

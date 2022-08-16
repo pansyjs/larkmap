@@ -7,39 +7,24 @@ import { LarkMap, MarkerCluster } from '@pansy/lark-map';
 interface ServiceData {
   n: string;
   v: string;
-  x: string;
-  y: string;
+  x: number;
+  y: number;
 }
-interface ClusterData extends ServiceData {
-  lngLat: {
-    lng: number;
-    lat: number;
-  }
-}
-
 
 export default () => {
-  const [data, setData] = useState<ClusterData[]>(undefined)
+  const [data, setData] = useState<ServiceData[]>(undefined)
 
   useEffect(()=>{
     fetch('https://gw.alipayobjects.com/os/basement_prod/67f47049-8787-45fc-acfe-e19924afe032.json')
       .then((res) => res.json())
       .then((list: ServiceData[]) => {
-        setData(list.map(item => {
-          return {
-            ...item,
-            lngLat: {
-              lng: +item.x,
-              lat: +item.y,
-            }
-          }
-        }));
+        setData(list);
       })
   }, []);
 
   return (
     <LarkMap mapType="GaodeV1" style={{ height: 500 }}>
-      <MarkerCluster<ClusterData>
+      <MarkerCluster<ServiceData>
         data={data}
         render={
           <Avatar
@@ -56,6 +41,8 @@ export default () => {
             </Avatar>
           )
         }}
+        getLat={(item) => item.y}
+        getLng={(item) => item.x}
       />
     </LarkMap>
   );

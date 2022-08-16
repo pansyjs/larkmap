@@ -57,7 +57,7 @@ export function usePropsReactive<P extends object = {}>(
         }
 
         if (key in setterMap) {
-          setterMap[key](setterParam, insRef.current)
+          setterMap[key](setterParam, insRef.current, nextProps);
         } else {
           const trySetterName = `set${toCapitalString(key)}`;
 
@@ -81,8 +81,6 @@ export function usePropsReactive<P extends object = {}>(
   }
 
   const onInstanceCreated = () => {
-    console.log(insRef.current);
-    console.log(props);
     reactivePropChange(props, false)
   }
 

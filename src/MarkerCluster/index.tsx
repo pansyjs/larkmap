@@ -49,6 +49,14 @@ function InternalMarkerCluster<D extends { lngLat: LngLat } = any>(
     });
   }
 
+  const handleDrilling = (opts: ClusterElementArgs)=>{
+    const coor = opts.geometry?.coordinates;
+
+    coor && scene.setCenter(coor);
+
+    scene.zoomIn()
+  }
+
   const createOptions = () => {
     const options: Partial<MarkerLayerOption> = {};
 
@@ -59,11 +67,14 @@ function InternalMarkerCluster<D extends { lngLat: LngLat } = any>(
     options.clusterOption.element = (args: ClusterElementArgs) => {
       let el = document.createElement('div');
 
-      if (!args.properties.cluster) {
+      if (!args.properties.cluster && props.render) {
         renderMarker(el, props.render, args);
       }
 
-      if (args?.properties?.point_count > 1) {
+      if (args?.properties?.point_count > 1 && props.renderCluster) {
+        el.addEventListener('click', () => {
+          handleDrilling(args)
+        })
         renderCluster(el, props.renderCluster, args);
       }
 
@@ -76,7 +87,7 @@ function InternalMarkerCluster<D extends { lngLat: LngLat } = any>(
   return null;
 }
 
-const ForwardMarkerCluster = forwardRef(InternalMarkerCluster) as <D extends { lngLat: LngLat } = any>(
+const ForwardMarkerCluster = forwardRef(InternalMarkerCluster) as <D extends object = any>(
   props: PropsWithChildren<MarkerClusterProps<D>> & { ref?: React.Ref<MarkerLayer> },
 ) => React.ReactElement;
 
@@ -90,6 +101,7 @@ export const MarkerCluster = ForwardMarkerCluster as MarkerClusterInterface;
 
 MarkerCluster.defaultProps = {
   cluster: true,
+  zoomOnClick: true,
 }
 
 export default MarkerCluster;
