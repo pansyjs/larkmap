@@ -1,6 +1,6 @@
 ---
-title: ClusterLayer 点聚合图层
-order: 1
+title: RasterLayer 瓦片图层
+order: 3
 group:
   title: 图层组件
   order: 1
@@ -9,19 +9,16 @@ nav:
   path: /components
 ---
 
-# ClusterLayer 点聚合图层
+# RasterLayer 瓦片图层
 
 ## 介绍
 
-ClusterLayer 点聚合图层组件
+瓦片图层组件
 
 ## 使用场景
-
-大量简单样式的点数据展示
-
+加载第三方图层组件
 ## 代码演示
 
 ### 默认示例
 
 <code src="./demos/default.tsx"></code>
-

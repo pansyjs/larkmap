@@ -16,12 +16,13 @@ export type { MarkerClusterProps } from './MarkerCluster/types';
 export { Popup } from './Popup';
 export type { PopupProps } from './Popup/types';
 
+export { HeatmapLayer } from './HeatmapLayer';
+export type { HeatmapLayerProps } from './HeatmapLayer/types';
+
+export { RasterLayer } from './RasterLayer';
+export type { RasterLayerProps } from './RasterLayer/types';
+
 export { useScene } from './hooks/useScene';
 export { useDraw } from './hooks/useDraw';
 export { useLayerManager } from './hooks/useLayerManager';
 export { useCreateLayer } from './hooks/useCreateLayer';
-
-/**
- * 图层组件
- */
- export * from './Layers';
