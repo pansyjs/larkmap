@@ -1,49 +1,38 @@
 import { useEffect, useRef } from 'react';
-import { useUpdateEffect } from '@pansy/react-hooks';
-import { RasterLayer as L7RasterLayer, Source } from '@antv/l7';
+import { RasterLayer as L7RasterLayer } from '@antv/l7';
 
 import { useScene } from '@/hooks/useScene';
 
 import type { FC } from 'react';
 import type { RasterLayerProps } from './types';
 
-export const RasterLayer: FC<RasterLayerProps> = (props) => {
-  const { zIndex, url, parser, visiable} = props;
+export const RasterLayer: FC<RasterLayerProps> = ({ url, parser, style, ...rest }) => {
   const scene = useScene();
-  const rasterLayerRef = useRef<L7RasterLayer>();
+  const rasterRef = useRef<L7RasterLayer>();
 
-  useEffect(() => {
-    const rasterLayer = new L7RasterLayer({
-      zIndex
-    });
+  useEffect(
+    () => {
+      const raster = new L7RasterLayer(rest);
 
-    const source = new Source(url, {
-      parser: parser as any
-    })
+      raster.source(url, {
+        parser,
+      } as any);
 
-    rasterLayer.source(source);
+      if (style) {
+        raster.style(style)
+      }
 
-    rasterLayerRef.current = rasterLayer;
-    scene.addLayer(rasterLayer);
+      scene.addLayer(raster);
 
-    return () => {
-      rasterLayerRef.current = undefined;
-      scene.removeLayer(rasterLayer);
-    };
-  }, []);
+      rasterRef.current = raster;
 
-  // 更新图层Layer
-  useUpdateEffect(() => {
-    if (rasterLayerRef.current) {
-      rasterLayerRef.current.setIndex(zIndex)
-    }
-  }, [zIndex]);
-
-  useUpdateEffect(() => {
-    if (rasterLayerRef.current) {
-      visiable ? rasterLayerRef.current.show() : rasterLayerRef.current.hide()
-    }
-  }, [visiable]);
+      return () => {
+        rasterRef.current = undefined;
+        rasterRef.current && scene.removeLayer(rasterRef.current);
+      };
+    },
+    []
+  );
 
   return null;
 }
