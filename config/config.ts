@@ -26,7 +26,7 @@ export default defineConfig({
     },
     {
       title: 'GitHub',
-      path: 'https://github.com/pansyjs/lark-map',
+      path: 'https://github.com/pansyjs/larkmap',
     },
   ]
 });
