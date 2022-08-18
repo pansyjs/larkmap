@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 import reduce from 'lodash/reduce';
 import { useDeepCompareEffect, useUnmount, } from '@pansy/react-hooks';
 import isEqual from 'lodash/isEqual';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from '@pansy/shared';
 
 import type { SyntheticEvent } from 'react';
 
