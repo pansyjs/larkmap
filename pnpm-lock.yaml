@@ -5,7 +5,7 @@ specifiers:
   '@antv/l7': ^2.9.24
   '@antv/l7-component': ^2.9.24
   '@antv/l7-composite-layers': ^0.2.0
-  '@antv/l7-draw': ^3.0.8
+  '@antv/l7-draw': ^3.0.0
   '@antv/l7-maps': ^2.9.24
   '@babel/runtime': ^7
   '@pansy/classnames': ^1.0.1
@@ -36,10 +36,8 @@ specifiers:
   typescript: ^4.7.4
 
 dependencies:
-  '@antv/l7-component': 2.9.24
   '@antv/l7-composite-layers': 0.2.0_@antv+l7@2.9.24
   '@antv/l7-draw': 3.0.8_@antv+l7@2.9.24
-  '@antv/l7-maps': 2.9.24
   '@babel/runtime': 7.18.9
   '@pansy/classnames': 1.0.1
   '@pansy/react-hooks': 0.11.0_react@17.0.2
@@ -50,6 +48,8 @@ dependencies:
 devDependencies:
   '@ant-design/icons': 4.7.0_sfoxds7t5ydpegc3knd667wn6m
   '@antv/l7': 2.9.24
+  '@antv/l7-component': 2.9.24
+  '@antv/l7-maps': 2.9.24
   '@pansy/dumi-theme-pansy': 1.0.1_sfoxds7t5ydpegc3knd667wn6m
   '@semantic-release/changelog': 6.0.1_semantic-release@19.0.3
   '@semantic-release/git': 10.0.1_semantic-release@19.0.3
