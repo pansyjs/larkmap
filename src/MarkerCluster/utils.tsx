@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from '@pansy/shared';
 
 import type { MarkerClusterProps, ElementArgs, } from './types';
 
