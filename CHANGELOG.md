@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/pansyjs/larkmap/compare/v1.1.0...v1.2.0) (2022-08-25)
+
+
+### Bug Fixes
+
+* 修复聚合点点击下钻效果无效 ([1a50edd](https://github.com/pansyjs/larkmap/commit/1a50edd070b2d47db7d62e782710326403599fa1))
+
+
+### Features
+
+* 聚合点添加销毁逻辑 ([e8737c2](https://github.com/pansyjs/larkmap/commit/e8737c239a16ab73738dd9d9b90693561a877b2f))
+
 # [1.1.0](https://github.com/pansyjs/larkmap/compare/v1.0.0...v1.1.0) (2022-08-22)
 
 
