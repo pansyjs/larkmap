@@ -1,6 +1,6 @@
 import { useContext, useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
 import { MarkerLayer } from '@antv/l7';
-import { useUpdate } from '@pansy/react-hooks';
+import { useUpdate, useUnmount } from '@pansy/react-hooks';
 
 import { LarkMapContext } from '@/LarkMap';
 import { usePropsReactive } from '@/hooks/usePropsReactive';
@@ -35,6 +35,13 @@ function InternalMarkerCluster<D extends { lngLat: LngLat } = any>(
     },
     []
   );
+
+  useUnmount(() => {
+    if (cluster.current) {
+      cluster.current.clear();
+      scene.removeMarkerLayer(cluster.current);
+    }
+  })
 
   useImperativeHandle(ref, () => cluster.current, []);
 
