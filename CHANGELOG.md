@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/pansyjs/larkmap/compare/v1.2.0...v1.3.0) (2022-08-25)
+
+
+### Features
+
+* 聚合点支持绑定右键事件 ([3510adc](https://github.com/pansyjs/larkmap/commit/3510adc0a869b5e1ca56231f088ff56f0b42b42e))
+
 # [1.2.0](https://github.com/pansyjs/larkmap/compare/v1.1.0...v1.2.0) (2022-08-25)
 
 
