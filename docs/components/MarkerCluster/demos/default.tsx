@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { useState, useEffect } from 'react';
 import { Avatar } from 'antd';
 import { AntDesignOutlined } from '@ant-design/icons';
@@ -25,7 +26,6 @@ export default () => {
   return (
     <LarkMap mapType="GaodeV1" style={{ height: 500 }}>
       <MarkerCluster<ServiceData>
-        disabledDrillDownMaxZoom={6}
         data={data}
         render={
           <Avatar

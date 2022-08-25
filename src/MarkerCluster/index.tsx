@@ -61,7 +61,11 @@ function InternalMarkerCluster<D extends { lngLat: LngLat } = any>(
     // @ts-ignore;
     const centerZoom = scene.map.getZoom();
 
-    if ('type' in opts && (disabledDrillDownMaxZoom && centerZoom <= disabledDrillDownMaxZoom)) {
+    if ('type' in opts) {
+      if (disabledDrillDownMaxZoom && centerZoom > disabledDrillDownMaxZoom) {
+        return;
+      }
+
       const coor = opts.geometry?.coordinates;
 
       if (coor && coor.length === 2) {
