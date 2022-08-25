@@ -55,6 +55,8 @@ export interface MarkerClusterProps<D extends object = any> extends Partial<IMar
   getLat?: (data: D) => number;
   /** 聚合点点击事件 */
   onClick?: (e: ElementArgs<D>) => void;
+  /** 聚合点右键点击事件 */
+  onContextMenu?: (e: ElementArgs<D>) => void;
 }
 
 export type { IMarkerLayerOption as MarkerLayerOption, LngLat }

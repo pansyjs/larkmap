@@ -91,6 +91,11 @@ function InternalMarkerCluster<D extends { lngLat: LngLat } = any>(
         handleClick(args)
       });
 
+      // 支持绑定右键点击事件
+      el.addEventListener('contextmenu', () => {
+        props?.onContextMenu(args);
+      });
+
       if ('type' in args && args.type === 'Feature') {
         props.renderCluster && renderMarker(el, props.renderCluster, args);
       } else {
