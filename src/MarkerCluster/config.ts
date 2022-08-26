@@ -8,6 +8,7 @@ import type { MarkerClusterProps } from './types';
 export const setterMap = {
   data(val: any[] = [], ins: MarkerLayer, props: MarkerClusterProps) {
     if (ins && isArray(val) && val.length) {
+      ins.clear();
       val.forEach(item => {
         const lng = props?.getLng(item) ?? item.lngLat.lng;
         const lat = props?.getLat(item) ?? item.lngLat.lat;
