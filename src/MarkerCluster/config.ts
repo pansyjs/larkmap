@@ -7,12 +7,13 @@ import type { MarkerClusterProps } from './types';
 
 export const setterMap = {
   data(val: any[] = [], ins: MarkerLayer, props: MarkerClusterProps) {
-    if (ins && isArray(val) && val.length) {
-      if(ins.points.length){
-      ins.points=[]
-      ins.clear()
+    if (ins.getMarkers().length > 0) {
+      // @ts-ignore
+      ins.points= [] ;
+      ins.clear();
     }
-    
+
+    if (ins && isArray(val) && val.length) {
       val.forEach(item => {
         const lng = props?.getLng(item) ?? item.lngLat.lng;
         const lat = props?.getLat(item) ?? item.lngLat.lat;
@@ -26,7 +27,6 @@ export const setterMap = {
           ins.addMarker(marker);
         }
       });
-     
     }
   }
 }

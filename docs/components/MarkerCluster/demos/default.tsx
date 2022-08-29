@@ -21,8 +21,8 @@ export default () => {
       .then((list: ServiceData[]) => {
         setData(list);
         setTimeout(() => {
-          setData(list.slice(0, 50))
-        }, 2000)
+          setData((list) => list.slice(0, 50))
+        }, 10 * 1000)
       })
   }, []);
 
