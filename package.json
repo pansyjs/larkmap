@@ -34,20 +34,20 @@
     "react-dom": "^16.8.0 || ^17.0.0"
   },
   "dependencies": {
-    "@antv/l7-composite-layers": "^0.2.0",
+    "@antv/l7-composite-layers": "^0.5.0",
     "@antv/l7-draw": "^3.0.0",
     "@babel/runtime": "^7",
     "@pansy/classnames": "^1.0.1",
-    "@pansy/shared": "^1.1.0",
+    "@pansy/shared": "^1.3.1",
     "@pansy/react-hooks": "^0.11.0",
     "geojson": "^0.5.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@antv/l7": "^2.9.24",
-    "@antv/l7-maps": "^2.9.24",
-    "@antv/l7-component": "^2.9.24",
+    "@antv/l7": "^2.9.25",
+    "@antv/l7-maps": "^2.9.25",
+    "@antv/l7-component": "^2.9.25",
     "@pansy/dumi-theme-pansy": "1.0.1",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
@@ -60,15 +60,15 @@
     "@umijs/plugin-antd": "^0.15.0",
     "@walrus/cli": "^1.3.4",
     "@walrus/plugin-release": "^1.14.3",
-    "antd": "^4.22.6",
+    "antd": "^4.22.8",
     "dumi": "^1.1.47",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "redbud": "1.0.0",
-    "semantic-release": "^19.0.3",
-    "typescript": "^4.7.4"
+    "redbud": "1.1.0",
+    "semantic-release": "^19.0.5",
+    "typescript": "^4.8.2"
   },
   "authors": [
     "wangxingkang <wang_xingkang@qq.com> (https://github.com/wangxingkang)"
