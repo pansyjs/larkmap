@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/pansyjs/larkmap/compare/v1.3.1...v1.3.2) (2022-08-29)
+
+
+### Bug Fixes
+
+* 修复聚合点更新问题 ([241ff1b](https://github.com/pansyjs/larkmap/commit/241ff1b3474d88950ab90f7e66bed61b63dd72aa))
+
 ## [1.3.1](https://github.com/pansyjs/larkmap/compare/v1.3.0...v1.3.1) (2022-08-26)
 
 
