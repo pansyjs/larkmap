@@ -15,11 +15,14 @@ interface ServiceData {
 export default () => {
   const [data, setData] = useState<ServiceData[]>(undefined)
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch('https://gw.alipayobjects.com/os/basement_prod/67f47049-8787-45fc-acfe-e19924afe032.json')
       .then((res) => res.json())
       .then((list: ServiceData[]) => {
         setData(list);
+        setTimeout(() => {
+          setData(list.slice(0, 50))
+        }, 2000)
       })
   }, []);
 
