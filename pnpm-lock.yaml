@@ -2,11 +2,11 @@ lockfileVersion: 5.4
 
 specifiers:
   '@ant-design/icons': ^4.7.0
-  '@antv/l7': ^2.9.25
-  '@antv/l7-component': ^2.9.25
+  '@antv/l7': ^2.9.26
+  '@antv/l7-component': ^2.9.26
   '@antv/l7-composite-layers': ^0.5.0
   '@antv/l7-draw': ^3.0.0
-  '@antv/l7-maps': ^2.9.25
+  '@antv/l7-maps': ^2.9.26
   '@babel/runtime': ^7
   '@pansy/classnames': ^1.0.1
   '@pansy/dumi-theme-pansy': 1.0.1
@@ -16,11 +16,11 @@ specifiers:
   '@semantic-release/git': ^10.0.1
   '@turf/helpers': ^6.5.0
   '@types/geojson': ^7946.0.10
-  '@types/lodash': ^4.14.183
+  '@types/lodash': ^4.14.184
   '@types/react': ^17
   '@types/react-dom': ^17
   '@umijs/babel-preset-umi': 3.5.30
-  '@umijs/plugin-antd': ^0.15.0
+  '@umijs/plugin-antd': ^0.15.2
   '@walrus/cli': ^1.3.4
   '@walrus/plugin-release': ^1.14.3
   antd: ^4.22.8
@@ -36,8 +36,8 @@ specifiers:
   typescript: ^4.8.2
 
 dependencies:
-  '@antv/l7-composite-layers': 0.5.0_@antv+l7@2.9.25
-  '@antv/l7-draw': 3.0.8_@antv+l7@2.9.25
+  '@antv/l7-composite-layers': 0.5.0_@antv+l7@2.9.26
+  '@antv/l7-draw': 3.0.8_@antv+l7@2.9.26
   '@babel/runtime': 7.18.9
   '@pansy/classnames': 1.0.1
   '@pansy/react-hooks': 0.11.0_react@17.0.2
@@ -47,19 +47,19 @@ dependencies:
 
 devDependencies:
   '@ant-design/icons': 4.7.0_sfoxds7t5ydpegc3knd667wn6m
-  '@antv/l7': 2.9.25
-  '@antv/l7-component': 2.9.25
-  '@antv/l7-maps': 2.9.25
+  '@antv/l7': 2.9.26
+  '@antv/l7-component': 2.9.26
+  '@antv/l7-maps': 2.9.26
   '@pansy/dumi-theme-pansy': 1.0.1_sfoxds7t5ydpegc3knd667wn6m
   '@semantic-release/changelog': 6.0.1_semantic-release@19.0.5
   '@semantic-release/git': 10.0.1_semantic-release@19.0.5
   '@turf/helpers': 6.5.0
   '@types/geojson': 7946.0.10
-  '@types/lodash': 4.14.183
+  '@types/lodash': 4.14.184
   '@types/react': 17.0.47
   '@types/react-dom': 17.0.17
   '@umijs/babel-preset-umi': 3.5.30
-  '@umijs/plugin-antd': 0.15.0_sfoxds7t5ydpegc3knd667wn6m
+  '@umijs/plugin-antd': 0.15.2_sfoxds7t5ydpegc3knd667wn6m
   '@walrus/cli': 1.3.4
   '@walrus/plugin-release': 1.14.3_@walrus+cli@1.3.4
   antd: 4.22.8_sfoxds7t5ydpegc3knd667wn6m
@@ -133,11 +133,11 @@ packages:
     resolution: {integrity: sha512-4ddpsiHN9Pd4UIlWuKVK1C4IiZIdbwQvy9i7DUSI3xNJ89FPUFt8lxDYj8GzzfdllV0NkJTRxnG+FvLk0llidg==}
     dev: false
 
-  /@antv/l7-component/2.9.25:
-    resolution: {integrity: sha512-q9eFh8y0wn85aMP7lJ3vZ6Mc2FEDEzxe+T/aKZH1l3gRVWVeNecttuAaQmCn6AwkHW9SIgyIDUbfQZP317IIRA==}
+  /@antv/l7-component/2.9.26:
+    resolution: {integrity: sha512-cK2iVa2tGB1GTcb1RatM79aPRtlHdExnkxyWhELkYy4ik1twkhc0QuTiQTSsQDzA0ZsJAl/MpDEsJXwI2yhvmA==}
     dependencies:
-      '@antv/l7-core': 2.9.25
-      '@antv/l7-utils': 2.9.25
+      '@antv/l7-core': 2.9.26
+      '@antv/l7-utils': 2.9.26
       '@babel/runtime': 7.18.9
       eventemitter3: 4.0.7
       inversify: 5.1.1
@@ -145,21 +145,21 @@ packages:
       reflect-metadata: 0.1.13
       supercluster: 7.1.5
 
-  /@antv/l7-composite-layers/0.5.0_@antv+l7@2.9.25:
+  /@antv/l7-composite-layers/0.5.0_@antv+l7@2.9.26:
     resolution: {integrity: sha512-0MQ+Hn8t2Frl9KenL2KmRKAMFz4mp4JNNxoIwgII300e/eWxwJ4Lvl9hsnEOHihLP9NwMMjYhTL1H+F53FfKYA==}
     peerDependencies:
       '@antv/l7': ^2.9.14
     dependencies:
       '@antv/event-emitter': 0.1.3
-      '@antv/l7': 2.9.25
+      '@antv/l7': 2.9.26
       '@antv/util': 2.0.17
     dev: false
 
-  /@antv/l7-core/2.9.25:
-    resolution: {integrity: sha512-9N2cxinRWk6hFz4uJLgrxrBcEye9APJ+2HlyTA5R+NC7d8zM4BtU8ebACUdIbCQOS+WFAzJNLVj6sm1+JSSUbQ==}
+  /@antv/l7-core/2.9.26:
+    resolution: {integrity: sha512-a454usMs2wxTQCgbAPtCwHG+z6zNc4YL6GkFKY+QeeJb8fNxEROcSgC+AQMd95ct6PLH3uwfLoo7JJZ9MUuQlg==}
     dependencies:
       '@antv/async-hook': 2.1.0
-      '@antv/l7-utils': 2.9.25
+      '@antv/l7-utils': 2.9.26
       '@babel/runtime': 7.18.9
       '@turf/helpers': 6.5.0
       ajv: 6.12.6
@@ -174,12 +174,12 @@ packages:
       reflect-metadata: 0.1.13
       viewport-mercator-project: 6.2.3
 
-  /@antv/l7-draw/3.0.8_@antv+l7@2.9.25:
+  /@antv/l7-draw/3.0.8_@antv+l7@2.9.26:
     resolution: {integrity: sha512-AIF6Z+7w9aHtlLsX710ig08fKNor1Au/XRFQWcGbJ018KbrHkH4UoTioP19/5tkIFV7Zc3JthgMMNJ0P+W4ToQ==}
     peerDependencies:
       '@antv/l7': ^2.8.35
     dependencies:
-      '@antv/l7': 2.9.25
+      '@antv/l7': 2.9.26
       '@turf/turf': 6.5.0
       eventemitter3: 4.0.7
       lodash: 4.17.21
@@ -190,14 +190,14 @@ packages:
       uuid: 8.3.2
     dev: false
 
-  /@antv/l7-layers/2.9.25:
-    resolution: {integrity: sha512-ug8V7hiRWctO8y9sGJwDY/P4KLqZgtoS8KDxHcgpfgrIFbY3ZRKIANUoXmRWKKfVQedMUxyM9JueTQMAU3kmjA==}
+  /@antv/l7-layers/2.9.26:
+    resolution: {integrity: sha512-wlJdqUKzZ2JefPVoNprT+DiUY+JH8Xg5f7PHhEKnfR4vqk8ACv//eVs+4owwoAd6Nd758c+ylH/vS1Zf1Le5og==}
     dependencies:
       '@antv/async-hook': 2.1.0
-      '@antv/l7-core': 2.9.25
-      '@antv/l7-maps': 2.9.25
-      '@antv/l7-source': 2.9.25
-      '@antv/l7-utils': 2.9.25
+      '@antv/l7-core': 2.9.26
+      '@antv/l7-maps': 2.9.26
+      '@antv/l7-source': 2.9.26
+      '@antv/l7-utils': 2.9.26
       '@babel/runtime': 7.18.9
       '@mapbox/martini': 0.2.0
       '@turf/helpers': 6.5.0
@@ -215,14 +215,13 @@ packages:
       gl-vec2: 1.3.0
       inversify: 5.1.1
       lodash: 4.17.21
-      merge-json-schemas: 1.0.0
       polyline-miter-util: 1.0.1
       reflect-metadata: 0.1.13
 
-  /@antv/l7-map/2.9.25:
-    resolution: {integrity: sha512-dMT0rkN13Fec5x1BtGt6BYdhpMt4pjty+2k24IHSxfZPUoSkAkqbgGZwIW/Y3ODsNaUq6HLK/uoQJtnXU0UtuA==}
+  /@antv/l7-map/2.9.26:
+    resolution: {integrity: sha512-GwlqEV2gS2wKS5Y0iXbzXJFsEc4q9R/Psd0BxVepNkzqS4q9kniseZIsLB9rMZh9Pe8QIFO2loVInUaF0Bs+Hw==}
     dependencies:
-      '@antv/l7-utils': 2.9.25
+      '@antv/l7-utils': 2.9.26
       '@babel/runtime': 7.18.9
       '@mapbox/point-geometry': 0.1.0
       '@mapbox/unitbezier': 0.0.0
@@ -230,13 +229,13 @@ packages:
       gl-matrix: 3.4.3
       lodash: 4.17.21
 
-  /@antv/l7-maps/2.9.25:
-    resolution: {integrity: sha512-a3XS6PBN40a2k7XIYjnxzomMk8+/j2HKo3/FGrdlwioB24F4XwsEzZHFYL8gIgy1ZIyOHcPLVhhC8HdhBOlqfA==}
+  /@antv/l7-maps/2.9.26:
+    resolution: {integrity: sha512-nuxber5n668hCrcAxE3OiGKi6OlmGi8Ym97kgs0v6bB/LFJHJJ9dyX6jbSUnT2ghZbS7pbrFG1CrSVoeAMBvSw==}
     dependencies:
       '@amap/amap-jsapi-loader': 0.0.3
-      '@antv/l7-core': 2.9.25
-      '@antv/l7-map': 2.9.25
-      '@antv/l7-utils': 2.9.25
+      '@antv/l7-core': 2.9.26
+      '@antv/l7-map': 2.9.26
+      '@antv/l7-utils': 2.9.26
       '@babel/runtime': 7.18.9
       '@types/amap-js-api': 1.4.10
       '@types/mapbox-gl': 1.13.3
@@ -246,37 +245,37 @@ packages:
       reflect-metadata: 0.1.13
       viewport-mercator-project: 6.2.3
 
-  /@antv/l7-renderer/2.9.25:
-    resolution: {integrity: sha512-wyOnu7qaSLL8ifjCF9gv7W96n7Bwio4QnF7Iz3jtEZcrxzVcrwUnpTspCbfacMaL3dQFVTgDgGAmPUMPkrpRhA==}
+  /@antv/l7-renderer/2.9.26:
+    resolution: {integrity: sha512-Z8FmB/pQy9cSOXm8nj1mbM+cLJuudwHCliqvV7tDleqOykiFs2KiCStDQGxSgCvDxcfSayCzfkLTLlMA5ebqvQ==}
     dependencies:
-      '@antv/l7-core': 2.9.25
-      '@antv/l7-utils': 2.9.25
+      '@antv/l7-core': 2.9.26
+      '@antv/l7-utils': 2.9.26
       '@babel/runtime': 7.18.9
       inversify: 5.1.1
       l7regl: 0.0.20
       lodash: 4.17.21
       reflect-metadata: 0.1.13
 
-  /@antv/l7-scene/2.9.25:
-    resolution: {integrity: sha512-Wa+18Sus/nq3oHCnWnMeGXdXo/WKZNAATm84Q13lwxiDM4lyX0NLlrpJLaEM7ij2GrqJFZo6veudE4V/yCS79A==}
+  /@antv/l7-scene/2.9.26:
+    resolution: {integrity: sha512-EtyAlFvutlLUYg0deyQGUfdTP6hLyk/B5sgGIqV2+PIwI1cM707vHHzE364snuk9q7kYgnTTKQAmg5zZgG0oIg==}
     dependencies:
-      '@antv/l7-component': 2.9.25
-      '@antv/l7-core': 2.9.25
-      '@antv/l7-layers': 2.9.25
-      '@antv/l7-maps': 2.9.25
-      '@antv/l7-renderer': 2.9.25
-      '@antv/l7-utils': 2.9.25
+      '@antv/l7-component': 2.9.26
+      '@antv/l7-core': 2.9.26
+      '@antv/l7-layers': 2.9.26
+      '@antv/l7-maps': 2.9.26
+      '@antv/l7-renderer': 2.9.26
+      '@antv/l7-utils': 2.9.26
       '@babel/runtime': 7.18.9
       inversify: 5.1.1
       mapbox-gl: 1.13.2
       reflect-metadata: 0.1.13
 
-  /@antv/l7-source/2.9.25:
-    resolution: {integrity: sha512-xcNrPwnTH+k0p4fnzYL0Fz+mJ/jnQjIczyV7Ajp2Bm+KQRPXIFsHma/dDVqWoqMfcouG1l5FRAdRUSwb4zouIQ==}
+  /@antv/l7-source/2.9.26:
+    resolution: {integrity: sha512-MnNjpqAuGuxDeo4aHAafxtCpRwyQwOMBlg20+kVgzfaUZ6WOgMg8Ayhq1ZDPRaAPt2zPlDA6uhhLyVoH07QWPw==}
     dependencies:
       '@antv/async-hook': 2.1.0
-      '@antv/l7-core': 2.9.25
-      '@antv/l7-utils': 2.9.25
+      '@antv/l7-core': 2.9.26
+      '@antv/l7-utils': 2.9.26
       '@babel/runtime': 7.18.9
       '@mapbox/geojson-rewind': 0.5.2
       '@mapbox/vector-tile': 1.3.1
@@ -293,8 +292,8 @@ packages:
       reflect-metadata: 0.1.13
       supercluster: 7.1.5
 
-  /@antv/l7-utils/2.9.25:
-    resolution: {integrity: sha512-QvOXQvuXAVuI7GNldPqKGXKLn/almwtGM2ZzKd2Zftf6b229Jwb5lSscalGxKPD8cY2ThjWrJWQeFfWPwSPndA==}
+  /@antv/l7-utils/2.9.26:
+    resolution: {integrity: sha512-rcF7Jm0APhcmoKqlgcfoMVZT2rVJK5LFB+J/Tun2QlTcmNDa1UY36W+G2EGWOoXlVW10BBeDtMLFqt2bo78O2w==}
     dependencies:
       '@babel/runtime': 7.18.9
       '@turf/bbox-polygon': 6.5.0
@@ -305,16 +304,16 @@ packages:
       gl-matrix: 3.4.3
       web-worker-helper: 0.0.3
 
-  /@antv/l7/2.9.25:
-    resolution: {integrity: sha512-Fh/Akoh6qF4s5dcKPakC+Xb0n+Fnn7QmGl+wTH8njGX0kLiHIwJTFFcFZS0A4w2FY5rn1SMS8ziMDqvkXKzLCA==}
+  /@antv/l7/2.9.26:
+    resolution: {integrity: sha512-OyhSyYlsTY7tMXc2EmH3IUMb13xpbVUc472bdx4263+AvFrZvgQ0KKcnZoEpr0BuYYOpwZYEbJEMrd4OhMYegg==}
     dependencies:
-      '@antv/l7-component': 2.9.25
-      '@antv/l7-core': 2.9.25
-      '@antv/l7-layers': 2.9.25
-      '@antv/l7-maps': 2.9.25
-      '@antv/l7-scene': 2.9.25
-      '@antv/l7-source': 2.9.25
-      '@antv/l7-utils': 2.9.25
+      '@antv/l7-component': 2.9.26
+      '@antv/l7-core': 2.9.26
+      '@antv/l7-layers': 2.9.26
+      '@antv/l7-maps': 2.9.26
+      '@antv/l7-scene': 2.9.26
+      '@antv/l7-source': 2.9.26
+      '@antv/l7-utils': 2.9.26
       '@babel/runtime': 7.18.9
 
   /@antv/util/2.0.17:
@@ -2567,7 +2566,7 @@ packages:
       '@types/debug': 4.1.7
       '@types/glob': 7.2.0
       '@types/got': 9.6.12
-      '@types/lodash': 4.14.183
+      '@types/lodash': 4.14.184
       '@types/mkdirp': 1.0.2
       '@types/mustache': 4.2.1
       '@types/prettier': 2.6.4
@@ -6158,8 +6157,8 @@ packages:
       '@types/node': 18.0.6
     dev: true
 
-  /@types/lodash/4.14.183:
-    resolution: {integrity: sha512-UXavyuxzXKMqJPEpFPri6Ku5F9af6ZJXUneHhvQJxavrEjuHkFp2YnDWHcxJiG7hk8ZkWqjcyNeW1s/smZv5cw==}
+  /@types/lodash/4.14.184:
+    resolution: {integrity: sha512-RoZphVtHbxPZizt4IcILciSWiC6dcn+eZ8oX9IWEYfDMcocdd42f7NPI6fQj+6zI8y4E0L7gu2pcZKLGTRaV9Q==}
     dev: true
 
   /@types/mapbox-gl/1.13.3:
@@ -6600,8 +6599,8 @@ packages:
       umi: 3.5.30
     dev: true
 
-  /@umijs/plugin-antd/0.15.0_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-HnEvox1+jrnlqNg7jpbviCUt6gSgF7o3jE2TjAEC/qMg/a5a5bi/TxpmVouR8sgcIvh7jusmp6VrCK0vvoSGtg==}
+  /@umijs/plugin-antd/0.15.2_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-iknetUYGIHCuUra4TD+yYxiMGVXhhn6S6I/6VKKWl6i8ToQ0W4S0So6eAG9JLGtYEEtjrNnecJXQVipmZtcHtA==}
     peerDependencies:
       umi: 3.x
     dependencies:
@@ -12645,10 +12644,6 @@ packages:
     resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
     dev: true
 
-  /lodash.isarray/4.0.0:
-    resolution: {integrity: sha512-V8ViWvoNlXpCrB6Ewaj3ScRXUpmCvqp4tJUxa3dlovuJj/8lp3SND5Kw4v5OeuHgoyw4qJN+gl36qZqp6WYQ6g==}
-    deprecated: This package is deprecated. Use Array.isArray.
-
   /lodash.isequal/4.5.0:
     resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
     dev: true
@@ -12657,18 +12652,13 @@ packages:
     resolution: {integrity: sha512-fPMfXjGQEV9Xsq/8MTSgUf255gawYRbjwMyDbcvDhXgV7enSZA0hynz6vMPnpAb5iONEzBHBPsT+0zes5Z301g==}
     dev: true
 
-  /lodash.isnil/4.0.0:
-    resolution: {integrity: sha512-up2Mzq3545mwVnMhTDMdfoG1OurpA/s5t88JmQX809eH3C8491iu2sfKhTfhQtKY78oPNhiaHJUpT/dUDAAtng==}
-
   /lodash.isplainobject/4.0.6:
     resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
+    dev: true
 
   /lodash.isstring/4.0.1:
     resolution: {integrity: sha512-0wJxfxH1wgO3GrbuP+dTTk7op+6L41QCXbGINEmD+ny/G/eCqGzxyCsh7159S+mgDDcoarnBw6PC1PS5+wUGgw==}
     dev: true
-
-  /lodash.mergewith/4.6.2:
-    resolution: {integrity: sha512-GK3g5RPZWTRSeLSpgP8Xhra+pnjBC56q9FZYe1d5RN3TJ35dbkGy3YqBSMbyCrlbi+CM9Z3Jk5yTL7RCsqboyQ==}
 
   /lodash.template/4.5.0:
     resolution: {integrity: sha512-84vYFxIkmidUiFxidA/KjjH9pAycqW+h980j7Fuz5qxRtO9pgB7MDFTdys1N7A5mcucRiDyEq4fusljItR1T/A==}
@@ -12686,9 +12676,6 @@ packages:
   /lodash.throttle/4.1.1:
     resolution: {integrity: sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==}
     dev: true
-
-  /lodash.uniq/4.5.0:
-    resolution: {integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==}
 
   /lodash.uniqby/4.7.0:
     resolution: {integrity: sha512-e/zcLx6CSbmaEgFHCA7BnoQKyCtKMxnuWrJygbwPs/AIn+IMKl66L8/s+wBUn5LRw2pZx3bUHibiV1b6aTWIww==}
@@ -13087,16 +13074,6 @@ packages:
       type-fest: 0.18.1
       yargs-parser: 20.2.9
     dev: true
-
-  /merge-json-schemas/1.0.0:
-    resolution: {integrity: sha1-LWNeqoQBxfo9A/MPiTSfx8r+5i8=}
-    engines: {node: '>=4'}
-    dependencies:
-      lodash.isarray: 4.0.0
-      lodash.isnil: 4.0.0
-      lodash.isplainobject: 4.0.6
-      lodash.mergewith: 4.6.2
-      lodash.uniq: 4.5.0
 
   /merge-stream/2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
