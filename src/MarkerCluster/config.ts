@@ -8,8 +8,6 @@ import type { MarkerClusterProps } from './types';
 export const setterMap = {
   data(val: any[] = [], ins: MarkerLayer, props: MarkerClusterProps) {
     if (ins.getMarkers().length > 0) {
-      // @ts-ignore
-      ins.points= [] ;
       ins.clear();
     }
 
