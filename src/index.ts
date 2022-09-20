@@ -25,6 +25,9 @@ export type { RasterLayerProps } from './RasterLayer/types';
 export {CustomControl} from './CustomControl';
 export type {CustomControlProps} from './CustomControl/types';
 
+export {LocationSearch } from './LocationSearch'
+export type {LocationSearchOption} from './LocationSearch/types'
+
 export { useScene } from './hooks/useScene';
 export { useDraw } from './hooks/useDraw';
 export { useLayerManager } from './hooks/useLayerManager';
