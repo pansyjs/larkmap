@@ -37,7 +37,7 @@ LarkMap 是地图容器组件，相关地图组件与 Hooks 需放到容器组�
 | map | 地图实例，可选，也可以通过配置项自动生成实例，详见 [L7 map](https://l7.antv.vision/zh/docs/api/map/map) | `MapInstance` | -- |
 | mapType | 地图类型 | `"GaodeV1"｜"GaodeV2"｜"Mapbox"｜"Map"` | `'Mapbox'` |
 | mapOptions | 地图配置项，配合地图类型配置地图 | `MapOptions` | -- |
-| onSceneLoaded | 场景加载成功回调 | `(scene: Scene) => void` | -- |
+| onLoaded | 场景加载成功回调 | `(scene: Scene) => void` | -- |
 | logoPosition | logo 展示位置，配置项详见 [L7 logoPosition](https://l7.antv.vision/zh/docs/api/scene#logoposition) | `PositionName` | `'bottomleft'` |
 | logoVisible | 是否显示 logo | `boolean` | `false` |
 | antialias | 是否开启抗锯齿 | `boolean` | `true` |
