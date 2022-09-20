@@ -22,7 +22,11 @@ export type { HeatmapLayerProps } from './HeatmapLayer/types';
 export { RasterLayer } from './RasterLayer';
 export type { RasterLayerProps } from './RasterLayer/types';
 
+export {CustomControl} from './CustomControl';
+export type {CustomControlProps} from './CustomControl/types';
+
 export { useScene } from './hooks/useScene';
 export { useDraw } from './hooks/useDraw';
 export { useLayerManager } from './hooks/useLayerManager';
 export { useCreateLayer } from './hooks/useCreateLayer';
+export {useControl } from './hooks/useControl';
