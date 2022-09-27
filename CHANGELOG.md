@@ -1,3 +1,18 @@
+# [1.4.0](https://github.com/pansyjs/larkmap/compare/v1.3.3...v1.4.0) (2022-09-27)
+
+
+### Bug Fixes
+
+* 修复地图加载成功回调函数拼写错误 ([3cf8441](https://github.com/pansyjs/larkmap/commit/3cf84413afb56f14411d479f36ce866fc4b902cd))
+
+
+### Features
+
+* 代码优化 ([813eb98](https://github.com/pansyjs/larkmap/commit/813eb98810d693be06f1253a07c72760457fb0fd))
+* 增加地点搜索组件 ([9baeaa9](https://github.com/pansyjs/larkmap/commit/9baeaa9bcc96128d8e4f66a78b76fffe942424c4))
+* 增加显示隐藏控制 ([12d611e](https://github.com/pansyjs/larkmap/commit/12d611e36b6a5ecf08dedab0727eec4f52915b40))
+* 自定义控件 ([a129dfc](https://github.com/pansyjs/larkmap/commit/a129dfca4fdca680b9fa376bcdbcdd720d12ead5))
+
 ## [1.3.3](https://github.com/pansyjs/larkmap/compare/v1.3.2...v1.3.3) (2022-08-29)
 
 
