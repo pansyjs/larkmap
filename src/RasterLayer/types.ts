@@ -6,6 +6,8 @@ export interface RasterLayerOptions {
   maskfence?: any;
   /** 图层层级 */
   zIndex?: number,
+  /** 是否可见 */
+  visible?: boolean
 }
 
 export type ParserType = 'rasterTile' | 'mvt';

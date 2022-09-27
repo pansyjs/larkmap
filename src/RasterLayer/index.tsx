@@ -6,10 +6,9 @@ import { useScene } from '@/hooks/useScene';
 import type { FC } from 'react';
 import type { RasterLayerProps } from './types';
 
-export const RasterLayer: FC<RasterLayerProps> = ({ url, parser, style, ...rest }) => {
+export const RasterLayer: FC<RasterLayerProps> = ({ url, parser, style, visible, ...rest }) => {
   const scene = useScene();
   const rasterRef = useRef<L7RasterLayer>();
-
   useEffect(
     () => {
       const raster = new L7RasterLayer(rest);
@@ -33,6 +32,10 @@ export const RasterLayer: FC<RasterLayerProps> = ({ url, parser, style, ...rest 
     },
     []
   );
+  useEffect(() => {
+    if (!rasterRef.current) return
+    visible ? rasterRef.current.show() : rasterRef.current.hide()
+  }, [visible])
 
   return null;
 }
