@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/pansyjs/larkmap/compare/v1.4.0...v1.5.0) (2022-11-22)
+
+
+### Features
+
+* update peerDependencies ([6d953a3](https://github.com/pansyjs/larkmap/commit/6d953a3ed5ba158f238f8546d94764822e108967))
+
 # [1.4.0](https://github.com/pansyjs/larkmap/compare/v1.3.3...v1.4.0) (2022-09-27)
 
 
