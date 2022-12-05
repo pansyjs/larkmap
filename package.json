@@ -38,16 +38,17 @@
     "@antv/l7-draw": "^3.0.0",
     "@babel/runtime": "^7",
     "@pansy/classnames": "^1.0.1",
-    "@pansy/shared": "^1.5.0",
     "@pansy/react-hooks": "^1.0.1",
+    "@pansy/shared": "^1.5.0",
     "geojson": "^0.5.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "mapbox-gl": "^2.11.0"
   },
   "devDependencies": {
     "@ant-design/icons": "^4.8.0",
     "@antv/l7": "^2.9.26",
-    "@antv/l7-maps": "^2.9.26",
     "@antv/l7-component": "^2.9.26",
+    "@antv/l7-maps": "^2.9.26",
     "@pansy/dumi-theme-pansy": "1.0.1",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
