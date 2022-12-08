@@ -44,11 +44,10 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
       Promise.resolve(import('!mapbox-gl')).then((mapboxgl) => {
         console.log(mapboxgl)
         mapboxgl.accessToken = mapOptions.token;
+
         return new mapboxgl.Map({
           container: containerRef.current as HTMLDivElement,
-          style: mapOptions.style || 'mapbox://styles/zcxduo/ck2ypyb1r3q9o1co1766dex29',
-          center: [111.36934942415266, 30.74160426062707], // starting position
-          zoom: 2,
+          ...mapOptions,
           projection: 'globe'
         })
       }).then((mapInstance) => {

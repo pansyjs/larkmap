@@ -35,7 +35,7 @@ export default () => {
 
     <LarkMap mapType='MapboxV2' style={{ height: 400 }} mapOptions={{
       style: 'mapbox://styles/mapbox/satellite-streets-v11',
-      token: 'pk.eyJ1IjoibWFyay1sNyIsImEiOiJja2Y0cGMyd28wZmJ1MnJuNGhxNWFqbXZjIn0.0LwUGtLCVxm5qekWq9fh6A'
+      token: 'your accesstoken'
     }}>
       <h2 style={{ position: 'absolute', left: '10px', color: '#fff' }}>LarkMap</h2>
       <Test></Test>
