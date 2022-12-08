@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/pansyjs/larkmap/compare/v1.5.0...v1.6.0) (2022-12-08)
+
+
+### Features
+
+* 支持MapboxV2版本 ([#6](https://github.com/pansyjs/larkmap/issues/6)) ([b16434b](https://github.com/pansyjs/larkmap/commit/b16434bc2e8098ecd8556c86009c2911837f3f5e))
+
 # [1.5.0](https://github.com/pansyjs/larkmap/compare/v1.4.0...v1.5.0) (2022-11-22)
 
 
