@@ -98,9 +98,9 @@ export interface LarkMapRefAttributes {
   getMap: () => Scene['map'];
 }
 
-export interface LarkMapProps extends Partial<Events>, CommonProps, Omit<ISceneConfig, 'id' | 'canvas' | 'map'> {
+export interface LarkMapProps extends Partial<Events>, CommonProps, Partial<ISceneConfig> {
   /** 地图类型 */
-  mapType?: 'GaodeV1' | 'GaodeV2' | 'Mapbox' | 'Map';
+  mapType?: 'GaodeV1' | 'GaodeV2' | 'Mapbox' | 'Map'|'MapboxV2';
   /** 地图实例，可选，也可以通过配置项自动生成实例 */
   map?: IMapWrapper;
   /**
