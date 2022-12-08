@@ -1,8 +1,7 @@
 import React, { useRef, useImperativeHandle, useMemo, useEffect, forwardRef } from 'react';
 import classNames from '@pansy/classnames';
 import { useUpdate } from '@pansy/react-hooks';
-import { Scene } from '@antv/l7';
-
+import { Mapbox, Scene } from '@antv/l7';
 import { LayerManager } from '@/utils';
 import { useEvents } from '@/hooks/useEvents';
 import { usePropsReactive } from '@/hooks/usePropsReactive';
@@ -17,6 +16,7 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
   const {
     style,
     className,
+    id,
     map,
     mapType,
     mapOptions = {},
@@ -40,19 +40,27 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
     let isMounted = true;
 
     if (!containerRef.current) return null;
+    if (mapType == 'MapboxV2') {
+      Promise.resolve(import('!mapbox-gl')).then((mapboxgl) => {
+        console.log(mapboxgl)
+        mapboxgl.accessToken = mapOptions.token;
 
-    Promise.resolve(map || createMap(mapType, mapOptions))
-      .then((mapInstance) => {
+        return new mapboxgl.Map({
+          container: containerRef.current as HTMLDivElement,
+          ...mapOptions,
+          projection: 'globe'
+        })
+      }).then((mapInstance) => {
         if (!isMounted) {
           return;
         }
-
         scene = new Scene({
           ...sceneConfig,
           id: containerRef.current as HTMLDivElement,
-          map: mapInstance,
+          map: new Mapbox({
+            mapInstance: mapInstance
+          }),
         });
-
         const layerManager = new LayerManager({ scene });
 
         contextValue.scene = scene;
@@ -66,18 +74,47 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
           update();
         });
       })
-      .catch((error) => {
-        console.error(error);
-      });
 
-      return () => {
-        isMounted = false;
-        if (scene) {
-          contextValue.scene = null;
-          contextValue.layerManager = null;
-          scene.destroy();
-        }
-      };
+    } else {
+      Promise.resolve(map || createMap(mapType, mapOptions))
+        .then((mapInstance) => {
+          if (!isMounted) {
+            return;
+          }
+          scene = new Scene({
+            ...sceneConfig,
+            id: containerRef.current as HTMLDivElement,
+            map: mapInstance,
+          });
+
+          const layerManager = new LayerManager({ scene });
+
+          contextValue.scene = scene;
+          contextValue.layerManager = layerManager;
+
+          scene.once('loaded', () => {
+            if (onLoaded) {
+              onLoaded(scene);
+            }
+            sceneRef.current = scene;
+            update();
+          });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+
+
+
+    return () => {
+      isMounted = false;
+      if (scene) {
+        contextValue.scene = null;
+        contextValue.layerManager = null;
+        scene.destroy();
+      }
+    };
   }, []);
 
   useImperativeHandle(
