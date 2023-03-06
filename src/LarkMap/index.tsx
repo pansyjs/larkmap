@@ -42,13 +42,12 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
     if (!containerRef.current) return null;
     if (mapType == 'MapboxV2') {
       Promise.resolve(import('!mapbox-gl')).then((mapboxgl) => {
-        console.log(mapboxgl)
-        mapboxgl.accessToken = mapOptions.token;
-
         return new mapboxgl.Map({
+          accessToken: mapOptions.token,
           container: containerRef.current as HTMLDivElement,
           ...mapOptions,
-          projection: 'globe'
+          projection: 'globe',
+
         })
       }).then((mapInstance) => {
         if (!isMounted) {
