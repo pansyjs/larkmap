@@ -53,25 +53,37 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
         if (!isMounted) {
           return;
         }
-        scene = new Scene({
-          ...sceneConfig,
-          id: containerRef.current as HTMLDivElement,
-          map: new Mapbox({
-            mapInstance: mapInstance
-          }),
-        });
-        const layerManager = new LayerManager({ scene });
+        mapInstance.on('style.load', () => {
+          mapInstance.setFog({
+            color: 'rgb(186, 210, 235)',
+            'high-color': 'rgb(36, 92, 223)',
+            'horizon-blend': 0.02,
+            'space-color': 'rgb(11, 11, 25)',
+            'star-intensity': 0.6,
+          })
+        })
+        mapInstance.once('idle', () => {
+          scene = new Scene({
+            ...sceneConfig,
+            id: containerRef.current as HTMLDivElement,
+            map: new Mapbox({
+              mapInstance: mapInstance
+            }),
+          });
+          const layerManager = new LayerManager({ scene });
 
-        contextValue.scene = scene;
-        contextValue.layerManager = layerManager;
+          contextValue.scene = scene;
+          contextValue.layerManager = layerManager;
 
-        scene.once('loaded', () => {
-          if (onLoaded) {
-            onLoaded(scene);
-          }
-          sceneRef.current = scene;
-          update();
-        });
+          scene.once('loaded', () => {
+            if (onLoaded) {
+              onLoaded(scene);
+            }
+            sceneRef.current = scene;
+            update();
+          });
+        })
+
       })
 
     } else {
