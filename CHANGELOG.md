@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/pansyjs/larkmap/compare/v1.6.0...v1.6.1) (2023-03-06)
+
+
+### Bug Fixes
+
+* 修复access-token设置失败的问题 ([c20cdc5](https://github.com/pansyjs/larkmap/commit/c20cdc53797ce375a5d6d342a2656473d6bb1eaa))
+
 # [1.6.0](https://github.com/pansyjs/larkmap/compare/v1.5.0...v1.6.0) (2022-12-08)
 
 
