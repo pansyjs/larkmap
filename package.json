@@ -1,6 +1,6 @@
 {
   "name": "@pansy/lark-map",
-  "version": "1.6.1",
+  "version": "1.7.0",
   "description": "A React toolkit for geospatial visualization based on L7",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",

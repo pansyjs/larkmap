@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/pansyjs/larkmap/compare/v1.6.1...v1.7.0) (2023-03-29)
+
+
+### Features
+
+* 优化地图加载逻辑 ([#8](https://github.com/pansyjs/larkmap/issues/8)) ([eb8dfb7](https://github.com/pansyjs/larkmap/commit/eb8dfb7e78e121f099f772228f1431ae9bb803d4))
+
 ## [1.6.1](https://github.com/pansyjs/larkmap/compare/v1.6.0...v1.6.1) (2023-03-06)
 
 
