@@ -46,7 +46,7 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
           accessToken: mapOptions.token,
           container: containerRef.current as HTMLDivElement,
           ...mapOptions,
-          projection: 'globe',
+          projection: mapOptions?.projection || 'globe',
 
         })
       }).then((mapInstance) => {
