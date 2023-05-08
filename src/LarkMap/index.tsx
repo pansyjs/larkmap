@@ -41,12 +41,26 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
 
     if (!containerRef.current) return null;
     if (mapType == 'MapboxV2') {
+      //@ts-ignore
       Promise.resolve(import('!mapbox-gl')).then((mapboxgl) => {
         return new mapboxgl.Map({
           accessToken: mapOptions.token,
           container: containerRef.current as HTMLDivElement,
           ...mapOptions,
           projection: mapOptions?.projection || 'globe',
+          //@ts-ignore
+          transformRequest: (url, resourceType) => {
+            let isSensoroSource = false
+            Array.isArray(mapOptions?.SensoroTiles) && mapOptions?.SensoroTiles.forEach((v) => {
+              if (url.includes(v)) isSensoroSource = true
+            })
+            if (resourceType === 'Tile' && isSensoroSource) {
+              return {
+                url: url,
+                headers: { 'Authorization': mapOptions?.Authorization },
+              };
+            }
+          }
 
         })
       }).then((mapInstance) => {
