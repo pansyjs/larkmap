@@ -49,18 +49,18 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
           ...mapOptions,
           projection: mapOptions?.projection || 'globe',
           //@ts-ignore
-          transformRequest:(url, resourceType) => {
-            let isSensoroSource=false
-            Array.isArray(mapOptions?.SensoroTiles)&&mapOptions?.SensoroTiles.forEach((v)=>{
-              if(url.includes(v))isSensoroSource=true
+          transformRequest: (url, resourceType) => {
+            let isSensoroSource = false
+            Array.isArray(mapOptions?.SensoroTiles) && mapOptions?.SensoroTiles.forEach((v) => {
+              if (url.includes(v)) isSensoroSource = true
             })
             if (resourceType === 'Tile' && isSensoroSource) {
-                return {
-                    url: url,
-                    headers: { 'Authorization': mapOptions?.Authorization},
-                };
+              return {
+                url: url,
+                headers: { 'Authorization': mapOptions?.Authorization },
+              };
             }
-        }
+          }
 
         })
       }).then((mapInstance) => {

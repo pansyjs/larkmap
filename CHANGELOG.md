@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/pansyjs/larkmap/compare/v1.7.0...v1.8.0) (2023-04-10)
+
+
+### Features
+
+* mapboxV2支持配置地图投影方式 ([#9](https://github.com/pansyjs/larkmap/issues/9)) ([5022481](https://github.com/pansyjs/larkmap/commit/5022481d13f2ecb032790ac7e249431b9af7be47))
+
 # [1.7.0](https://github.com/pansyjs/larkmap/compare/v1.6.1...v1.7.0) (2023-03-29)
 
 
