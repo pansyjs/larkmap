@@ -1,3 +1,11 @@
+# [1.9.0](https://github.com/pansyjs/larkmap/compare/v1.8.0...v1.9.0) (2023-05-08)
+
+
+### Features
+
+* mapboxV2支持配置地图投影方式 ([864eb3b](https://github.com/pansyjs/larkmap/commit/864eb3ba0e00813e8fbc3a4c9d8c49cfa988e138))
+* 支持请求业务瓦片地图在header上添加token验证 ([6f31f40](https://github.com/pansyjs/larkmap/commit/6f31f409ca5e74962c5a0e72a4d3b48a6cd9e479))
+
 # [1.8.0](https://github.com/pansyjs/larkmap/compare/v1.7.0...v1.8.0) (2023-04-10)
 
 
