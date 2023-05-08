@@ -8,24 +8,27 @@ export default () => {
 
     useEffect(() => {
       if (!scene) return
-      scene.on('load', () => {
-        map.addSource('mapbox-dem', {
-          'type': 'raster-dem',
-          'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
-          'tileSize': 512,
-          'maxzoom': 10
-        });
-        // 给个夸张
-        map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
-        // 加个雾
-        map.setFog({
-          'horizon-blend': 0.3,
-          'color': '#f8f0e3',
-          'high-color': '#add8e6',
-          'space-color': '#d8f2ff',
-          'star-intensity': 0.0
-        });
-      })
+      map.addSource('sensoro-poi', {
+        'type': 'vector',
+        'tiles': [
+          'https://lins-dev1-api.sensoro.com' + '/gis/v1/poi/vector/{z}/{x}/{y}.pbf'
+        ],
+        'minzoom': 11,
+        'maxzoom': 20
+      });
+      map.addLayer({
+        id: 'sensoro-poi',
+        type: 'circle',
+        source: 'sensoro-poi',
+        "source-layer": "poi_mvt",
+        paint: {
+          'circle-color': '#1ACB7C',
+          'circle-radius': 4,
+          'circle-stroke-width': 1,
+          'circle-stroke-color': '#fff',
+        },
+      },
+        'road-label-simple');
 
     }, [scene])
 
@@ -34,8 +37,15 @@ export default () => {
   return (
 
     <LarkMap mapType='MapboxV2' style={{ height: 400 }} mapOptions={{
-      style: 'mapbox://styles/mapbox/satellite-streets-v11',
-      token: 'your accesstoken'
+      style: 'mapbox://styles/mapbox/light-v11',
+      zoom: 11,
+      center: [111.268338, 30.69343],
+      token: 'your token',
+      SensoroTiles: [
+        '/gis/v1/poi/vector/'
+      ],
+      Authorization: 'Bearer xxxx'
+
     }}>
       <h2 style={{ position: 'absolute', left: '10px', color: '#fff' }}>LarkMap</h2>
       <Test></Test>

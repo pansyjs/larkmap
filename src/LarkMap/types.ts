@@ -98,9 +98,19 @@ export interface LarkMapRefAttributes {
   getMap: () => Scene['map'];
 }
 
+interface TMapOptions extends Partial<IMapConfig> {
+  /**
+   * 业务瓦片请求列表
+   */
+  SensoroTiles?: string[],
+  /**
+   * 业务统一授权 ’Bearer xxx‘
+   */
+  Authorization?: string
+}
 export interface LarkMapProps extends Partial<Events>, CommonProps, Partial<ISceneConfig> {
   /** 地图类型 */
-  mapType?: 'GaodeV1' | 'GaodeV2' | 'Mapbox' | 'Map'|'MapboxV2';
+  mapType?: 'GaodeV1' | 'GaodeV2' | 'Mapbox' | 'Map' | 'MapboxV2';
   /** 地图实例，可选，也可以通过配置项自动生成实例 */
   map?: IMapWrapper;
   /**
@@ -108,7 +118,7 @@ export interface LarkMapProps extends Partial<Events>, CommonProps, Partial<ISce
    * 配合地图类型配置地图，
    * 配置项详见 [L7-Map](https://l7.antv.vision/zh/docs/api/map/map)
    * */
-  mapOptions?: Partial<IMapConfig>;
+  mapOptions?: TMapOptions;
   children?: ReactNode;
   /** 场景加载成功回调 */
   onLoaded?: (scene: Scene) => void;
