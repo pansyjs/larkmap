@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/pansyjs/larkmap/compare/v1.9.0...v1.10.0) (2023-12-06)
+
+
+### Features
+
+* 升级mapbox版本到v3.0 ([340af17](https://github.com/pansyjs/larkmap/commit/340af176fa98df5edbdb460f262bfd2ed0e0ca66))
+
 # [1.9.0](https://github.com/pansyjs/larkmap/compare/v1.8.0...v1.9.0) (2023-05-08)
 
 
