@@ -31,3 +31,6 @@ yarn.lock
 .umi-production
 .umi-test
 .env.local
+
+# lock
+pnpm-lock.yaml
