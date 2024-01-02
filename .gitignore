@@ -32,5 +32,9 @@ yarn.lock
 .umi-test
 .env.local
 
+.dumi/tmp
+.dumi/tmp-test
+.dumi/tmp-production
+
 # lock
 pnpm-lock.yaml
