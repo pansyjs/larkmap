@@ -108,11 +108,11 @@ interface TMapOptions extends Partial<IMapConfig> {
    */
   Authorization?: string
 }
-export interface LarkMapProps extends Partial<Events>, CommonProps, Partial<ISceneConfig> {
+export interface LarkMapProps extends Partial<Events>, CommonProps, Partial<Omit<ISceneConfig, 'canvas' | 'map'>> {
   /** 地图类型 */
-  mapType?: 'GaodeV1' | 'GaodeV2' | 'Mapbox' | 'Map' | 'MapboxV2';
+  mapType?: 'Gaode' | 'Tencent' | 'Baidu' | 'Mapbox' | 'Map' | 'MapboxV2';
   /** 地图实例，可选，也可以通过配置项自动生成实例 */
-  map?: IMapWrapper;
+  map?: IMapWrapper | ((container: HTMLDivElement) => Promise<IMapWrapper>);
   /**
    * 地图配置项
    * 配合地图类型配置地图，

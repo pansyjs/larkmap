@@ -1,4 +1,4 @@
-import { GaodeMap, GaodeMapV2, Map } from '@antv/l7-maps';
+import { GaodeMapV2, Map } from '@antv/l7';
 
 import type { IMapConfig } from '@antv/l7';
 import type { LarkMapProps } from './types';
@@ -8,15 +8,27 @@ export const createMap = async (mapType: LarkMapProps['mapType'], mapOptions: Pa
     return new Map(mapOptions);
   }
 
-  if (mapType === 'GaodeV1') {
-    return new GaodeMap(mapOptions);
-  }
-
-  if (mapType === 'GaodeV2') {
+  /** 高德地图 - 不再支持 V1 */
+  if (mapType === 'Gaode') {
     return new GaodeMapV2(mapOptions);
   }
 
-  return Promise.resolve(import('@antv/l7-maps')).then(({ Mapbox }) => {
+  /** 腾讯地图 */
+  if (mapType === 'Tencent') {
+    return Promise.resolve(import('@antv/l7')).then(({ TencentMap }) => {
+      return new TencentMap(mapOptions);
+    });
+  }
+
+  /** 百度地图 */
+  if (mapType === 'Baidu') {
+    return Promise.resolve(import('@antv/l7')).then(({ BaiduMap }) => {
+      return new BaiduMap(mapOptions);
+    });
+  }
+
+  /** Mapbox */
+  return Promise.resolve(import('@antv/l7')).then(({ Mapbox }) => {
     return new Mapbox(mapOptions);
   });
 }

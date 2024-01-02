@@ -14,9 +14,10 @@
     "pretty": true,
     "lib": ["dom", "esnext"],
     "skipLibCheck": true,
-    "baseUrl": "src",
+    "baseUrl": "./",
     "outDir": "dist",
     "paths": {
+      "@/*": ["src/*"],
       "@pansy/lark-map": ["./src/index.ts"]
     }
   },

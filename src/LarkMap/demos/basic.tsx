@@ -1,18 +1,20 @@
+import React from 'react';
 import { LarkMap } from '@pansy/lark-map';
 
 import type { LarkMapProps } from '@pansy/lark-map';
 
 const config: LarkMapProps = {
-  mapType: 'GaodeV1',
+  mapType: 'Gaode',
   mapOptions: {
     style: 'light',
+    token: '0dc7ed53afe8e83b31e0f36c3e5859b0',
     center: [120.210792, 30.246026],
     zoom: 9,
   },
 };
 
-export default () => (
-  <LarkMap {...config} style={{ height: 400 }}>
-    <h2 style={{ position: 'absolute', left: '10px' }}>LarkMap</h2>
-  </LarkMap>
+const Example: React.FC = () => (
+  <LarkMap {...config} style={{ height: 400 }} />
 );
+
+export default Example;

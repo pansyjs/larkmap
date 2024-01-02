@@ -12,21 +12,23 @@ nav:
 
 ## 介绍
 
-LarkMap 是地图容器组件，相关地图组件与 Hooks 需放到容器组件内部才能使用，容器组件可通过属性配置不同的地图，支持 [Mapbox](https://docs.mapbox.com/mapbox-gl-js/api/map/)、[Gaode](https://lbs.amap.com/api/javascript-api/reference/map) 及 [L7Map](https://l7.antv.vision/zh/docs/api/map/map) 作为底图。
+LarkMap 是地图容器组件，相关地图组件与 Hooks 需放到容器组件内部才能使用，容器组件可通过属性配置不同的地图，支持以下地图作为底图。
+
+- [Mapbox](https://docs.mapbox.com/mapbox-gl-js/api/map/)
+- [L7Map](https://l7.antv.vision/zh/docs/api/map/map) 
+- [Gaode](https://lbs.amap.com/api/javascript-api/reference/map) 
+- [Tencent](https://lbs.qq.com/webApi/javascriptGL/glDoc/docIndexMap)
+- [Baidu](https://mapopen-pub-jsapi.bj.bcebos.com/jsapi/reference/jsapi_webgl_1_0.html#a0b0)
 
 ## 代码演示
 
 ### 通过配置项生成
 
-<code src="./demos/default.tsx"></code>
+<code src="./demos/basic.tsx"></code>
 
-### 通过实例生成
+### 通过实例生成地图
 
-<code src="./demos/mapbox-instance.tsx"></code>
-
-### 事件绑定
-
-<code src="./demos/event.tsx"></code>
+<code src="./demos/instance.tsx"></code>
 
 ## API
 
