@@ -1,4 +1,4 @@
-import { GaodeMapV2, Map } from '@antv/l7';
+import { GaodeMap, Map } from '@antv/l7';
 
 import type { IMapConfig } from '@antv/l7';
 import type { LarkMapProps } from './types';
@@ -10,7 +10,7 @@ export const createMap = async (mapType: LarkMapProps['mapType'], mapOptions: Pa
 
   /** 高德地图 - 不再支持 V1 */
   if (mapType === 'Gaode') {
-    return new GaodeMapV2(mapOptions);
+    return new GaodeMap(mapOptions);
   }
 
   /** 腾讯地图 */

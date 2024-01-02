@@ -108,7 +108,9 @@ interface TMapOptions extends Partial<IMapConfig> {
    */
   Authorization?: string
 }
-export interface LarkMapProps extends Partial<Events>, CommonProps, Partial<Omit<ISceneConfig, 'canvas' | 'map'>> {
+export interface LarkMapProps extends Partial<Events>, CommonProps, Partial<Omit<ISceneConfig, 'id' | 'canvas' | 'map'>> {
+  /** 容器 id */
+  id?: string;
   /** 地图类型 */
   mapType?: 'Gaode' | 'Tencent' | 'Baidu' | 'Mapbox' | 'Map';
   /** 地图实例，可选，也可以通过配置项自动生成实例 */

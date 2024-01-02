@@ -1,4 +1,4 @@
-import React, { useRef, useImperativeHandle, useMemo, useEffect, forwardRef } from 'react';
+import React, { useRef, useImperativeHandle, useMemo, useEffect, forwardRef, useState } from 'react';
 import classNames from '@pansy/classnames';
 import { isUndefined, isFunction } from '@pansy/shared';
 import { useUpdate } from '@pansy/react-hooks';
@@ -27,14 +27,14 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
   } = props;
   const update = useUpdate();
   const containerRef = useRef<HTMLDivElement>(null);
-  const sceneRef = useRef<Scene>();
+  const [sceneInstance, setSceneInstance] = useState<Scene>(null);
   const { current: contextValue } = useRef<LarkMapContextValue>({ scene: null, layerManager: null });
 
-  usePropsReactive(mapOptions, sceneRef, {
+  usePropsReactive(mapOptions, { current: sceneInstance }, {
     setterMap,
     converterMap,
   });
-  useEvents<Scene, EventMapping>(sceneRef.current, events, props);
+  useEvents<Scene, EventMapping>(sceneInstance, events, props);
 
   useEffect(() => {
     let scene: Scene;
@@ -65,7 +65,7 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
           if (onLoaded) {
             onLoaded(scene);
           }
-          sceneRef.current = scene;
+          setSceneInstance(scene);
           update();
         });
       })
@@ -86,10 +86,10 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
   useImperativeHandle(
     ref,
     () => ({
-      getScene: () => sceneRef.current,
-      getMap: () => sceneRef.current.map
+      getScene: () => sceneInstance,
+      getMap: () => sceneInstance.map
     }),
-    [sceneRef]
+    [sceneInstance]
   );
 
   const styles: CSSProperties = useMemo(
@@ -103,8 +103,8 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
   );
 
   return (
-    <div ref={containerRef} style={styles} className={classNames('larkmap', className)}>
-      {sceneRef.current && <LarkMapContext.Provider value={contextValue}>{children}</LarkMapContext.Provider>}
+    <div id={id} ref={containerRef} style={styles} className={classNames('larkmap', className)}>
+      {sceneInstance && <LarkMapContext.Provider value={contextValue}>{children}</LarkMapContext.Provider>}
     </div>
   );
 });

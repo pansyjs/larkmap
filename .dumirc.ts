@@ -9,6 +9,13 @@ export default defineConfig({
       github: 'https://github.com/pansyjs/larkmap'
     },
   },
+  resolve: {
+    docDirs: [{ type: 'doc', dir: 'docs' }],
+    atomDirs: [
+      { type: 'component', dir: 'src' },
+      { type: 'component', dir: 'src/hooks' }
+    ],
+  },
   headScripts: [
     `
       window._AMapSecurityConfig = {
@@ -17,4 +24,5 @@ export default defineConfig({
     `
   ],
   hash: true,
+  mfsu: false,
 })
