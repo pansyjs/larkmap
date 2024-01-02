@@ -13,7 +13,7 @@ const ChildComponent = () => {
   const scene = useScene();
 
   useEffect(() => {
-    scene.setMapStyle('amap://styles/dark');
+    scene.setZoom(12);
   }, []);
 
   return null;

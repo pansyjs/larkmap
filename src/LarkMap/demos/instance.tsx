@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Map } from 'mapbox-gl';
 import { LarkMap } from '@pansy/lark-map';
@@ -14,8 +13,10 @@ const getMapInstance = (container) => {
   });
 }
 
-export default () => {
+const Example: React.FC = () => {
   return (
     <LarkMap map={getMapInstance} style={{ height: 500 }} />
   )
 };
+
+export default Example;
