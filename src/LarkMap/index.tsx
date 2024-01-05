@@ -60,6 +60,12 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
                 headers: { 'Authorization': mapOptions?.Authorization },
               };
             }
+            const customPrefix='sensoroStyle-'
+            if(resourceType=='Style'&&url.includes(customPrefix)){
+              return {
+                url: 'https://lins-cdn.sensoro.com/lins-cdn/mapbox-styles/'+url.split(customPrefix)[1],
+              }
+            }
           }
 
         })
