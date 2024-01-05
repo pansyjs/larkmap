@@ -24,6 +24,10 @@ LarkMap 是地图容器组件，相关地图组件与 Hooks 需放到容器组�
 
 <code src="./demos/mapbox-instance.tsx"></code>
 
+### 配置地图样式前缀
+
+<code src="./demos/mapbox-style-prefix.tsx"></code>
+
 ### 事件绑定
 
 <code src="./demos/event.tsx"></code>

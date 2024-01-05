@@ -118,7 +118,9 @@ export interface LarkMapProps extends Partial<Events>, CommonProps, Partial<ISce
    * 配合地图类型配置地图，
    * 配置项详见 [L7-Map](https://l7.antv.vision/zh/docs/api/map/map)
    * */
-  mapOptions?: TMapOptions;
+  mapOptions?: TMapOptions & {
+    mapboxStylePrefix?: string;
+  };
   children?: ReactNode;
   /** 场景加载成功回调 */
   onLoaded?: (scene: Scene) => void;
