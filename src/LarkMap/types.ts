@@ -120,6 +120,7 @@ export interface LarkMapProps extends Partial<Events>, CommonProps, Partial<ISce
    * */
   mapOptions?: TMapOptions & {
     mapboxStylePrefix?: string;
+    mapboxSatellitePrefix?:string;
   };
   children?: ReactNode;
   /** 场景加载成功回调 */
