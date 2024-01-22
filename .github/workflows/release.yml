@@ -29,9 +29,7 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: latest
-          run_install: |
-            - recursive: true
-              args: [--no-frozen-lockfile]
+          run_install: true
 
       - name: Build
         run: pnpm build
