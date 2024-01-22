@@ -23,18 +23,11 @@ docs-dist
 coverage
 
 # Packages lock
-package-lock.json
 yarn.lock
+package-lock.json
 
-# umi
-.umi
-.umi-production
-.umi-test
-.env.local
-
+# dumi
 .dumi/tmp
 .dumi/tmp-test
 .dumi/tmp-production
 
-# lock
-pnpm-lock.yaml
