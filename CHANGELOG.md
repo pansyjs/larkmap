@@ -1,3 +1,26 @@
+# [2.0.0](https://github.com/pansyjs/larkmap/compare/v1.10.0...v2.0.0) (2024-01-22)
+
+
+### Bug Fixes
+
+* 修复 mapbox 示例报错 ([a203f75](https://github.com/pansyjs/larkmap/commit/a203f7532dbd8dda9f880c2f7d44a833621b2812))
+
+
+### chore
+
+* 去除手动发布 ([6066036](https://github.com/pansyjs/larkmap/commit/6066036f234122dd6514dd95def0b0df4346f81d))
+
+
+### Features
+
+* 优化 mapbox 地图逻辑 ([8efc7ef](https://github.com/pansyjs/larkmap/commit/8efc7ef52c844a89fe4fe5bc43d99d40b3856843))
+* 去除 MapboxV2 配置 ([3377a07](https://github.com/pansyjs/larkmap/commit/3377a07337b1705f3dbca395c183dd21df058923))
+
+
+### BREAKING CHANGES
+
+* 实例化 Mapbox 优化，去除内部逻辑
+
 # [1.10.0](https://github.com/pansyjs/larkmap/compare/v1.9.0...v1.10.0) (2023-12-06)
 
 
