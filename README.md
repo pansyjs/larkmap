@@ -35,6 +35,6 @@ const config = {
 };
 
 export default () => {
-  return <LarkMap {...config} style={{ height: '300px' }}></LarkMap>;
+  return <LarkMap {...config} style={{ height: '300px' }} />;
 };
 ```
