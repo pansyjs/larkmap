@@ -57,30 +57,30 @@ export const LarkMap = forwardRef<LarkMapRefAttributes, LarkMapProps>((props, re
             if (resourceType === 'Tile' && isSensoroSource) {
               return {
                 url: url,
-                headers: { 'Authorization': mapOptions?.Authorization },
+                headers: { 'Authorization': mapOptions?.Authorization, ...(mapOptions?.headerExtra || {}) },
               };
             }
             const mapboxStylePrefix = mapOptions?.mapboxStylePrefix
-            if(resourceType=='Style'){
+            if (resourceType == 'Style') {
               return {
                 url: mapboxStylePrefix ? `${mapboxStylePrefix}/${url}` : url
               }
             }
-            const mapboxSatellitePrefix=mapOptions?.mapboxSatellitePrefix
-            if (mapboxSatellitePrefix&&resourceType === 'Tile' && url.includes('mapbox.satellite')) {
+            const mapboxSatellitePrefix = mapOptions?.mapboxSatellitePrefix
+            if (mapboxSatellitePrefix && resourceType === 'Tile' && url.includes('mapbox.satellite')) {
               const regex = /mapbox\.satellite\/(\d+)\/(\d+)\/(\d+)/;
               const match = url.match(regex);
               if (match) {
-                  const zoom = match[1];
-                  const x = match[2];
-                  const y = match[3];
-                  if (zoom < 4) {
-                      return {
-                          url: `${mapboxSatellitePrefix}/${zoom}/${x}/${y}.webp`
-                      }
+                const zoom = match[1];
+                const x = match[2];
+                const y = match[3];
+                if (zoom < 4) {
+                  return {
+                    url: `${mapboxSatellitePrefix}/${zoom}/${x}/${y}.webp`
                   }
+                }
               }
-          }
+            }
           }
 
         })
