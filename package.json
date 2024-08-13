@@ -9,7 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "start": "dumi dev",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider dumi dev",
     "dev": "redbud dev",
     "build": "redbud build",
     "build:doc": "dumi build",
